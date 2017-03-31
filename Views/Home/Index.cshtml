@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html ng-app="matchpoint-app">
+<head>
+    <title>MatchPoint</title>
+	<meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/Scripts/Bootstrap/css/bootstrap.css" />
+    <link rel="styleSheet" type="text/css" href="/Scripts/Angular-ui-grid/ui-grid.css" />
+    <link rel="styleSheet" type="text/css" href="/Scripts/Angular-validation-messages/angular-validation-messages.css" />    
+    <link rel="stylesheet" type="text/css" href="/Scripts/Angular-materials-icons/angular-material-icons.css" />
+    <link rel="stylesheet" type="text/css" href="/Scripts/angucomplete-alt/angucomplete-alt.css" />
+    <link rel="stylesheet" type="text/css" href="/Scripts/Angular-custom-select/customSelect.css"/>
+    <link rel="styleSheet" type="text/css" href="/assets/styles/MatchPoint.client.css" /> 
+      
+    @*<link rel="stylesheet" type="text/css" href="/Scripts/CSS/mp_styles.css" />*@
+    <base href="http://localhost:4190/" />
+</head>
+<body ng-cloak>
+    
+   
+    <div class="container container-table">
+        
+        <div class="row vertical-center-row">
+            <div ng-include src="'/app/Navigation/Views/header.tpl.html'"></div>
+            <!--{{1 + 1}}-->
+            <div ng-view></div>
+            <div ng-include src="'/app/Navigation/Views/footer.tpl.html'"></div>
+        </div>
+    </div> 
+    <script src="/Scripts/jquery/jquery.js"></script>
+    <script src="/Scripts/Angular/angular.js"></script>
+    <script src="/Scripts/Angular/angular-route.js"></script>
+    <script src="/Scripts/Angular-validation-messages/angular-validation-messages.js"></script>
+    <script src="/Scripts/Angular-ui/angular-ui.js"></script>
+    <script src="/Scripts/Angular-ui-router/angular-ui-router.js"></script>
+    <script src="/Scripts/Angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
+    
+    <script src="/Scripts/Angular-ui-grid/ui-grid.js"></script>
+    <script src="/Scripts/lodash/lodash.js"></script>
+    <script src="/Scripts/pdfmake/pdfmake.js"></script>
+    <script src="/Scripts/pdfmake/vfs_fonts.js"></script>
+    <script src="/Scripts/Bootstrap/js/bootstrap.js"></script>
+    <script src="/Scripts/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="/Scripts/Angular-materials-icons/angular-material-icons.js"></script>    
+    <script scr="/Scripts/angucomplete-alt/angucomplete-alt.js"></script>
+    <script src="/Scripts/Angular-custom-select/customSelect.js"></script>
+    <!--<script src="../Scripts/MatchPoint.client_components.js"></script>
+    <script src="../Scripts/MatchPoint.client_apps.js"></script>-->
+
+    
+    <script src="/app/Components/LocalStorage/localStorage.module.js"></script>
+    <script src="/app/Components/LocalStorage/localStorage.service.js"></script>
+    <script src="/app/Components/Notification/notification.module.js"></script>
+    <script src="/app/Components/Notification/notification.service.js"></script>
+    <script src="/app/Components/NavService/mpNavService.module.js"></script>
+    <script src="/app/Components/NavService/mpNavService.service.js"></script>
+    <script src="/app/Components/WebService/mpWebService.module.js"></script>
+    <script src="/app/Components/WebService/mpWebService.service.js"></script>    
+    <script src="/app/Components/DataGrid/mpDataGrid.module.js"></script>
+    <script src="/app/Components/DataGrid/mpDataGridUtils.js"></script>
+    <script src="/app/Components/DataGrid/Directives/mpDataGrid.directive.js"></script>
+    <script src="/app/Components/Tabset/mpTabset.module.js"></script>
+    <script src="/app/Components/Tabset/Directives/mpTabset.directive.js"></script>
+    <script src="/app/Components/DateControl/mpDateControl.module.js"></script>
+    <script src="/app/Components/DateControl/Directives/mpDateControl.directive.js"></script>
+    <script src="/app/Components/DateControl/Directives/mpDateTimeControl.directive.js"></script>
+    <script src="/app/Components/Validation/mpValidation.module.js"></script>
+    <script src="/app/Components/Validation/Directives/mpMobileNumberValidation.js"></script>    
+    <script src="/app/Components/Validation/Directives/mpCountryCodeValidation.js"></script>
+    <script src="/app/Components/Validation/Directives/mpAccountUserNameValidation.js"></script>    
+    <script src="/app/Components/Validation/Directives/mpMultipleEmailsValidation.js"></script>
+    <script src="/app/Components/LoginService/loginService.module.js"></script>
+    <script src="/app/Components/LoginService/loginService.js"></script>    
+    <script src="/app/Components/AutoComplete/mpAutoComplete.module.js"></script>
+    <script src="/app/Components/AutoComplete/Directives/mpAutoCompleteDropdown.directive.js"></script>
+    <script src="/app/Authentication/authentication.module.js"></script>
+    <script src="/app/Donors/donors.module.js"></script>
+    <script src="/app/Governance/Controllers/OrganisationUnit/organisationUnits.module.js"></script>
+    <script src="/app/Governance/governance.module.js"></script>    
+    <script src="/app/Navigation/home.module.js"></script>
+    <script src="/app/Patients/patients.module.js"></script>
+    <script src="/app/Admin/admin.module.js"></script>   
+    <script src="/app/Governance/Services/OrganisationUnit.Service.js"></script>
+    <script src="/app/Admin/Services/Admin.Service.js"></script>
+    <script src="/app/Admin/Services/orgUnitRepresentativeRoles.Service.js"></script> 
+    <script src="/app/Admin/Services/refEntities.Service.js"></script>
+     
+    <script src="/app/app.module.js"></script>
+    <script src="/app/Authentication/Services/authentication.services.js"></script>
+    <script src="/app/Authentication/Controllers/authentication.controller.js"></script>    
+    <script src="/app/Donors/Controllers/donors.controller.js"></script>
+    <script src="/app/Governance/Controllers/OrganisationUnit/organisationUnits.controller.js"></script>
+    <script src="/app/Governance/Controllers/OrganisationUnit/ouDetails.controller.js"></script>
+    <script src="/app/Governance/Controllers/OrganisationUnit/ouDetailsAlias.controller.js"></script>
+    <script src="/app/Admin/Services/Admin.Service.js"></script>
+    <script src="/app/Admin/Controllers/UserAdmin/OURepRoles/orgUnitRepresentativeRoles.controller.js"></script>
+    <script src="/app/Admin/Controllers/UserAdmin/OURepRoles/orgUnitRepresentativeRolesDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/UserAdmin/OURepRoles/orgUnitRepresentativeCreateRole.controller.js"></script>    
+    <script src="/app/Admin/Controllers/ReferenceEntities/refEntitiesIndex.controller.js"></script>  
+    <script src="/app/Admin/Controllers/ReferenceEntities/Titles/refEntitiesTitles.controller.js"></script> 
+    <script src="/app/Admin/Controllers/ReferenceEntities/Titles/refEntitiesTitleDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Titles/refEntitiesCreateTitle.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/AusPostalCodes/refEntitiesAusPostalCode.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/AusPostalCodes/refEntitiesAusPostCodeDetail.controller.js"></script> 
+    <script src="/app/Admin/Controllers/ReferenceEntities/AusPostalCodes/refEntitiesCreateAusPostalCode.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Countries/refEntitiesCountries.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Countries/refEntitiesCountryDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Countries/refEntitiesCreateCountry.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Languages/refEntitiesLanguage.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Languages/refEntitiesLanguageDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Languages/refEntitiesCreateLanguage.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Diagnosis/refEntitiesDiagnosis.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Diagnosis/refEntitiesDiagnosisDetail.controller.js"></script>    
+    <script src="/app/Admin/Controllers/ReferenceEntities/Diagnosis/refEntitiesCreateDiagnosis.controller.js"></script>  
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveFocus/refEntitiesDriveFocus.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveFocus/refEntitiesDriveFocusDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveFocus/refEntitiesCreateDriveFocus.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveType/refEntitiesDriveType.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveType/refEntitiesDriveTypeDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveType/refEntitiesCreateDriveType.controller.js"></script>    
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveStatus/refEntitiesDriveStatus.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveStatus/refEntitiesDriveStatusDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/DriveStatus/refEntitiesCreateDriveStatus.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/StatusChangedReason/refEntitiesStatusChangedReason.controller.js"></script>    
+    <script src="/app/Admin/Controllers/ReferenceEntities/StatusChangedReason/refEntitiesStatusChangedReasonDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/StatusChangedReason/refEntitiesCreateStatusChangedReason.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/CBUStatusChangedReason/refEntitiesCBUStatusChangedReason.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/CBUStatusChangedReason/refEntitiesCBUStatusChangedReasonDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/CBUStatusChangedReason/refEntitiesCreateCBUStatusChangedReason.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/InvoiceNumberCounters/refEntitiesInvoiceNumCounters.controllers.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/InvoiceNumberCounters/refEntitiesInvoiceNumCountersDetail.controllers.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/InvoiceNumberCounters/refEntitiesCreateInvoiceNumCounters.controllers.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/PriceItem/refEntitiesPriceItem.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/PriceItem/refEntitiesPriceItemDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/PriceItem/refEntitiesCreatePriceItem.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/RelationshipType/refEntitiesRelationType.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/RelationshipType/refEntitiesRelationTypeDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/RelationshipType/refEntitiesCreateRelationType.controller.js"></script>   
+    <script src="/app/Admin/Controllers/ReferenceEntities/FundingType/refEntitiesCreateFundingType.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/FundingType/refEntitiesFundingType.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/FundingType/refEntitiesFundingTypeDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/ItemMappings/refEntitiesCreateItemMappings.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/ItemMappings/refEntitiesItemMappings.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/ItemMappings/refEntitiesItemMappingsDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/OperationalMetrics/refEntitiesOperationalMetrics.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/OperationalMetrics/refEntitiesOperationalMetricsEditDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Configuration/refEntitiesConfiguration.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Configuration/refEntitiesConfigurationDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/ReqNotifyConfiguration/refEntitiesReqNotifyConfigurationDetail.controller.js"></script>     
+    <script src="/app/Admin/Controllers/ReferenceEntities/Nationalities/refEntitiesNationalities.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Nationalities/refEntitiesNationalitiesDetail.controller.js"></script>
+    <script src="/app/Admin/Controllers/ReferenceEntities/Nationalities/refEntitiesCreateNationalities.controller.js"></script>
+    <script src="/app/Admin/Controllers/UserAdmin/UserAccounts/useraccounts.controller.js"></script>
+    <script src="/app/Admin/Controllers/UserAdmin/UserAccounts/useraccountdetail.controller.js"></script>   
+    <script src="/app/Admin/Controllers/UserAdmin/useradminindex.controller.js"></script>   
+    @*<script src="/app/Admin/Controllers/UserAdmin/UserAccounts/userAccountDetailIndex.controller.js"></script>*@   
+    <script src="/app/Admin/Controllers/UserAdmin/UserAccounts/useraccountattachments.controller.js"></script>  
+    <script src="/app/Navigation/Controllers/home.controller.js"></script>
+    <script src="/app/Navigation/Services/home.services.js"></script>
+    <script src="/app/Patients/Controllers/patients.controller.js"></script>
+    <script src="/app/Patients/Controllers/patientDetail.controller.js"></script>    
+    <script src="/app/Navigation/Directives/navbar/mpNavbar.js"></script>
+    <script src="/app/Navigation/Directives/sidebar/mpMenuitem.js"></script>
+    <script src="/app/Navigation/Directives/sidebar/mpSidebar.js"></script>
+    <script src="/app/Navigation/Directives/tree/tree.js"></script>
+    <script src="/app/Components/NavService/mpNavService.service.js"></script>
+
+
+    <script src="/app/app.config.js"></script>
+    <script src="/app/app.controller.js"></script>
+
+ 
+
+    <script>
+        console.log('APP LOADING: ' + window.location.href);
+        
+        angular.module('matchpoint-app', ['app']);
+    </script>
+</body>
+</html>

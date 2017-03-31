@@ -1,0 +1,153 @@
+﻿/* page center - start */
+html, body {
+    height: 100%;
+    background-color: transparent;
+}
+
+.container-table {
+    height: 100%;
+    background-color: transparent;  /* #fafafb; */
+}
+
+.container-table {
+    display: table;
+}
+
+.vertical-center-row {
+    display: table-cell;
+    vertical-align: top;
+}
+/* page center - end */
+
+/* Login Form - Start */
+
+​body {
+    background: #eee !important;
+}
+
+.wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+    .form-signin .form-signin-heading,
+    .form-signin .checkbox {
+        margin-bottom: 30px;
+    }
+
+    .form-signin .checkbox {
+        font-weight: normal;
+    }
+
+    .form-signin .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+    .form-signin input[type="text"] {
+        margin-bottom: -1px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .form-signin input[type="password"] {
+        margin-bottom: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+
+/* Login Form - End */
+
+
+/* NavBar - Start */
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: black; /*Sets the text hover color on navbar*/
+    background-color: skyblue;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    color: black;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+    .navbar-default .navbar-nav > .active > a:hover {
+        color: black;
+        background-color: skyblue;
+    }
+
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: black;
+        background-color: skyblue;
+    }
+
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover {
+    color: black;
+    background-color: skyblue;
+}
+
+.navbar-default {
+    background-color: transparent; /* #0f006f; */
+    border-color: transparent; /* #030033; */
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: skyblue; /* #66CCFF; */ /*change color of links in drop down here*/
+    border: 1px solid black;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: skyblue; /*Change rollover cell color here*/
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: black; /*Change active text color here*/
+}
+/* NavBar - End */
+
+/* Border Box - Start */
+
+.BorderBox {
+    box-sizing: border-box;
+    padding: 5px;
+    border: 5px solid #DDD;
+    border-color:skyblue;
+}
+
+.BorderBoxTitle {
+    box-sizing: border-box;
+    padding: 5px;
+    border: 5px solid #DDD;
+    border-color:skyblue;
+    background-color:skyblue;
+    font-size:larger;
+}
+
+/* Border Box - End */
+
+
