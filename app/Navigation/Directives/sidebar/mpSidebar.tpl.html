@@ -1,0 +1,16 @@
+﻿<div id="MainMenu">
+    <div class="list-group panel">                
+        <a ng-click="navigateToState('home')" class="list-group-item list-group-item-success" style="cursor:pointer" data-parent="#MainMenu">Home</a>
+        <a ng-click="navigateToState('patients')" class="list-group-item list-group-item-success" style="cursor:pointer" data-parent="#MainMenu">Patients</a>
+        <a ng-click="navigateToState('donors')" class="list-group-item list-group-item-success" style="cursor:pointer" data-parent="#MainMenu">Donors</a>
+        <a href="#governance" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Governance  <i class="fa fa-caret-down"></i></a>
+        <div class="collapse" id="governance">           
+            <a ng-click="navigateToState('organisationUnits')" class="list-group-item"  style="cursor:pointer">Organisation Units</a>           
+        </div>
+        <a href="#admin" class="list-group-item list-group-item-success" data-toggle="collapse" data-parent="#MainMenu">Admin  <i class="fa fa-caret-down"></i></a>
+        <div class="collapse" id="admin">
+            <a ng-click="navigateToState('refentitiesindex')" class="list-group-item"  style="cursor:pointer">Reference Entities</a>
+            <a ng-click="navigateToState('useradminindex')" class="list-group-item"  style="cursor:pointer">User Admin</a>
+        </div>
+    </div>
+</div>

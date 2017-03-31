@@ -1,0 +1,78 @@
+﻿<div ng-controller="refEntitiesAusPostCodeDetailController">
+     
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refAusPostEditForm" ng-submit="Save()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Post Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.PostalCode" name="PostalCode" type="text" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refAusPostEditForm.PostalCode.$error" ng-show="refAusPostEditForm.PostalCode.$dirty && refAusPostEditForm.PostalCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refAusPostEditForm.PostalCode.$error.required">
+                                        <msg>Please enter a name.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Locality</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.Locality" name="Locality" type="text" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refAusPostEditForm.Locality.$error" ng-show="refAusPostEditForm.Locality.$dirty && refAusPostEditForm.Locality.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refAusPostEditForm.Locality.$error.required">
+                                        <msg>Please enter a locality.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">State</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.State" name="State" type="text" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refAusPostEditForm.State.$error" ng-show="refAusPostEditForm.State.$dirty && refAusPostEditForm.State.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refAusPostEditForm.State.$error.required">
+                                        <msg>Please enter a state.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Category</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.Category" name="Category" type="text" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refAusPostEditForm.Category.$error" ng-show="refAusPostEditForm.Category.$dirty && refAusPostEditForm.Category.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refAusPostEditForm.Category.$error.required">
+                                        <msg>Please enter a category.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Comments</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.Comments" type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Save" ng-disabled="refAusPostEditForm.$invalid">Save</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>        
+    </div>
+</div>

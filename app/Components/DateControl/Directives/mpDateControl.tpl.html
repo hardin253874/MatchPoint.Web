@@ -1,0 +1,16 @@
+﻿<div class="row mp-date-control ">
+     <div class="mp-date-control-value-wrapper">
+         <input type="text"
+                style="display: table-cell; vertical-align:top;"
+                ng-disabled="model.disableControl"
+                datepicker-popup="{{model.format}}"
+                ng-model="ngModel" 
+                is-open="opened" 
+                min-date="model.minDate" 
+                ng-click="open()">
+     </div>
+    <div class="mp-date-control-button-wrapper">
+        <button tabindex="-1" class="btn_lighten btn-calendar" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+    </div>
+
+</div>

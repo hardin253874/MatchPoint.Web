@@ -1,0 +1,79 @@
+﻿    <div ng-controller="LoginController" class="loginwrapper">
+        <div ng-show="model.error" class="alert alert-danger">{{error}}</div>
+        <div ng-show="model.loginMode" class="wrapper">
+            <form class="form-signin" name="loginform" ng-submit="login()" role="form">
+                <h2 class="form-signin-heading">Login</h2>
+                <div class="form-group">
+                    <!--<label for="username">Username</label>-->
+                    <i class="fa fa-key"></i>
+                    <input type="text" name="username" id="username" class="form-control" ng-model="model.username" required placeholder="Email Address" />
+                    <span ng-show="loginform.username.$dirty && loginform.username.$error.required" class="help-block">Username is required</span>
+                </div>
+                <div class="form-group">
+                    <!--<label for="password">Password</label>-->
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" id="password" class="form-control" ng-model="model.password" required placeholder="Password" />
+                    <span ng-show="loginform.password.$dirty && loginform.password.$error.required" class="help-block">Password is required</span>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" ng-disabled="loginform.$invalid || dataLoading" class="btn btn-danger">Login</button>
+                    <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />                    
+                </div>
+                <div>
+                    <br />
+                    <br />
+                    <a ng-click="model.loginMode = false;" ng-show="model.loginMode">Sign Up</a><a ng-click="model.loginMode = true;" ng-show="!model.loginMode">Sign In</a>
+                    <br />
+                    <br />
+                    Please use following test accounts <br />to login and all passwords are <b>Password0!</b>
+                    <br />
+                    test@test.com
+                    <br />
+                    patientuser@test.com
+                    <br />
+                    donoruser@test.com
+                </div>
+            </form>
+        </div>
+
+        <div ng-show="!model.loginMode" class="wrapper">          
+            <form class="form-signin" name="registerform" ng-submit="register()" role="form">
+                <h2 class="form-signin-heading">Registration</h2>
+                <div class="form-group">
+                    <!--<label for="username">Username</label>-->
+                    <i class="fa fa-key"></i>
+                    <input type="text" name="username" id="username" class="form-control" ng-model="model.username" required placeholder="Email Address" />
+                    <span ng-show="registerform.username.$dirty && registerform.username.$error.required" class="help-block">Username is required</span>
+                </div>
+                <div class="form-group">
+                    <!--<label for="password">Password</label>-->
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" id="password" class="form-control" ng-model="model.password" required placeholder="Password" />
+                    <span ng-show="registerform.password.$dirty && registerform.password.$error.required" class="help-block">Password is required</span>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" ng-disabled="registerform.$invalid || dataLoading" class="btn btn-danger">Register</button>
+                    <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                </div>
+                <div>
+                    <br />
+                    <br />
+                    <a ng-click="model.loginMode = false;" ng-show="model.loginMode">Sign Up</a><a ng-click="model.loginMode = true;" ng-show="!model.loginMode">Sign In</a>
+                    <br />
+                    <br />
+                    Please use following test accounts to login and all passwords are <b>Password0!</b>
+                    <br />
+                    test@test.com
+                    <br />
+                    patientuser@test.com
+                    <br />
+                    donoruser@test.com
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+

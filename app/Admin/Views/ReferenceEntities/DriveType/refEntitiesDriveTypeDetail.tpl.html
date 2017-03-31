@@ -1,0 +1,54 @@
+﻿<div ng-controller="refEntitiesDriveTypeDetailController">
+  
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <div class="btn-group pull-right">
+                    <ng-md-icon data-toggle="modal" data-target="#modalDeActivate" title="Deactivate" style="fill:#a3cbce;cursor:pointer" icon="healing"></ng-md-icon>
+                    <ng-md-icon ng-click="EditItem()" title="Edit Item" style="fill:#a3cbce;cursor:pointer" icon="create"></ng-md-icon>
+                    <ng-md-icon ng-click="Close()" title="Close" style="fill:#a3cbce;cursor:pointer" icon="cancel"></ng-md-icon>
+                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDeActivate">Deactivate</button>
+                    <button type="button" class="btn btn-primary" ng-click="EditItem()">Edit</button>
+                    <button type="button" class="btn btn-primary" ng-click="Close()">Close</button>-->
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Name</div>
+                    <div class="col-md-8">{{DriveTypeDetail.Name}}</div>
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+        <br />
+        <br />
+        <!-- Modal - Deactivate -->
+        <div class="modal fade" id="modalDeActivate" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Deactivate</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Deactivate this drive type?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

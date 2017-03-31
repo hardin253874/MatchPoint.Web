@@ -1,0 +1,78 @@
+﻿<div ng-controller="refEntitiesNationalitiesDetailController">
+     
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refNationalitiesEditForm" ng-submit="Save()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Country Name</div>
+                            <div class="col-md-8">
+                                <input ng-model="NationalityDetail.CountryName" name="CountryName" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refNationalitiesEditForm.CountryName.$error" ng-show="refNationalitiesEditForm.CountryName.$dirty && refNationalitiesEditForm.CountryName.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refNationalitiesEditForm.CountryName.$error.required">
+                                        <msg>Please enter a country name.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Country Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="NationalityDetail.CountryCode" name="CountryCode" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refNationalitiesEditForm.CountryCode.$error" ng-show="refNationalitiesEditForm.CountryCode.$dirty && refNationalitiesEditForm.CountryCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refNationalitiesEditForm.CountryCode.$error.required">
+                                        <msg>Please enter a country code.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">ISO Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="NationalityDetail.ISOCode" name="RefISOCode" type="number" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refNationalitiesEditForm.RefISOCode.$error" ng-show="refNationalitiesEditForm.RefISOCode.$dirty && refNationalitiesEditForm.RefISOCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refNationalitiesEditForm.RefISOCode.$error.required">
+                                        <msg>Please enter a ISO Code.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Nationality</div>
+                            <div class="col-md-8">
+                                <input ng-model="NationalityDetail.NationalityValue" name="NationalityValue" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refNationalitiesEditForm.NationalityValue.$error" ng-show="refNationalitiesEditForm.NationalityValue.$dirty && refNationalitiesEditForm.NationalityValue.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refNationalitiesEditForm.NationalityValue.$error.required">
+                                        <msg>Please enter a Nationality.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Save" ng-disabled="refNationalitiesEditForm.$invalid">Save</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+
+
+    </div>
+
+</div>

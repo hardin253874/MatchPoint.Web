@@ -1,0 +1,61 @@
+﻿<div ng-controller="orgUnitRepRolesDetailController">
+  
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="orgUnitRepEditDetailForm" ng-submit="Save()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-4">Role Name</div>
+                            <div class="col-md-8">
+                                <input ng-show="editing" ng-model="OrgUnitRepRolesDetail.RoleName" name="RoleName" autofocus required />
+                                <div ng-messages="orgUnitRepEditDetailForm.RoleName.$error" ng-show="orgUnitRepEditDetailForm.RoleName.$dirty && orgUnitRepEditDetailForm.RoleName.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="orgUnitRepEditDetailForm.RoleName.$error.required">
+                                        <msg>Please enter a role name.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">User Roles</div>
+                            <div class="col-md-8">
+                                <span ng-repeat="userRepRole in OrgUnitRepRolesDetail.UserRoles">
+                                    <input type="checkbox" value="userRepRole.Name" ng-checked="userRepRole.Matched" />
+                                    <label>{{userRepRole.Name}}</label>
+                                    <br />
+                                </span>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-md-4">Organisation Unit Types</div>
+                            <div class="col-md-8">
+                                <span ng-repeat="orgUnitType in OrgUnitRepRolesDetail.OrganizationUnitTypes">
+                                    <input type="checkbox" value="orgUnitType.Name" ng-checked="orgUnitType.Matched" />
+                                    <label>{{orgUnitType.Name}}</label>
+                                    <br />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" ng-show="editing" class="btn btn-primary pull-right" value="Save" ng-disabled="orgUnitRepEditDetailForm.$invalid">Save</button></div>
+                            <div class="col-md-6"><button type="button" ng-show="editing" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

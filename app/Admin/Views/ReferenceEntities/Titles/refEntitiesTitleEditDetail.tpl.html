@@ -1,0 +1,41 @@
+﻿<div ng-controller="refEntitiesTitleDetailController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <form vmsg-form name="refTitleEditForm" ng-submit="Save()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Name</div>
+                            <div class="col-md-8">
+                                <input ng-model="TitleDetail.Name" name="TitleName" class="form-control" type="text" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refTitleEditForm.TitleName.$error" ng-show="refTitleEditForm.TitleName.$dirty && refTitleEditForm.TitleName.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refTitleEditForm.TitleName.$error.required">
+                                        <msg>Please enter a name.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" value="Save" class="btn btn-primary pull-right" ng-disabled="refTitleEditForm.$invalid">Save</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

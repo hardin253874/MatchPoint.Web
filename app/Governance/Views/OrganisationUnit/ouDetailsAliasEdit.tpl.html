@@ -1,0 +1,25 @@
+﻿<div class="organisationUnits" ng-controller="ouDetailsAliasController">
+    <div class="container">
+
+        <form vmsg-form class="form-horizontal" name="ouAliasForm" ng-submit="submit()">
+            <ul>
+                <li id="errorMessages" class="error alert-danger " data-ng-repeat="error in Errors">{{error}}</li>
+            </ul>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Alias:</label>
+                <div class="col-sm-5">
+                    <input ng-model="Alias.Name" class="form-control" type="text" />
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Save" class="btn btn-default pull-left" ng-disabled="ouAliasForm.$untouched && ouAliasForm.$invalid">
+                    <button type="button" class="btn btn-primary pull-left" ng-click="cancel()">Cancel</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

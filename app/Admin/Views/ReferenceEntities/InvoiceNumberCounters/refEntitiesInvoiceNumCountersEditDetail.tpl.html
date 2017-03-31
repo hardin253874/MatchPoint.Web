@@ -1,0 +1,165 @@
+﻿<div ng-controller="refEntitiesInvoiceNumCounterDetailController">
+  
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refInvoiceNumCounterEditForm" ng-submit="Save()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Donor Invoice Prefix</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.DonorInvoicePrefix" name="DonorInvoicePrefix" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.DonorInvoicePrefix.$error" ng-show="refInvoiceNumCounterEditForm.DonorInvoicePrefix.$dirty && refInvoiceNumCounterEditForm.DonorInvoicePrefix.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.DonorInvoicePrefix.$error.required">
+                                        <msg>The DonorInvoicePrefix field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Donor Invoice Counter</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.DonorInvoiceCounter" name="DonorInvoiceCounter" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.DonorInvoiceCounter.$error" ng-show="refInvoiceNumCounterEditForm.DonorInvoiceCounter.$dirty && refInvoiceNumCounterEditForm.DonorInvoiceCounter.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.DonorInvoiceCounter.$error.required">
+                                        <msg>The DonorInvoiceCounter field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Donor Credit Prefix</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.DonorCreditPrefix" name="DonorCreditPrefix" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.DonorCreditPrefix.$error" ng-show="refInvoiceNumCounterEditForm.DonorCreditPrefix.$dirty && refInvoiceNumCounterEditForm.DonorCreditPrefix.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.DonorCreditPrefix.$error.required">
+                                        <msg>The DonorCreditPrefix field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Donor Credit Counter</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.DonorCreditCounter" name="DonorCreditCounter" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.DonorCreditCounter.$error" ng-show="refInvoiceNumCounterEditForm.DonorCreditCounter.$dirty && refInvoiceNumCounterEditForm.DonorCreditCounter.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.DonorCreditCounter.$error.required">
+                                        <msg>The DonorCreditCounter field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Cord Invoice Prefix</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.CordInvoicePrefix" name="CordInvoicePrefix" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.CordInvoicePrefix.$error" ng-show="refInvoiceNumCounterEditForm.CordInvoicePrefix.$dirty && refInvoiceNumCounterEditForm.CordInvoicePrefix.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.CordInvoicePrefix.$error.required">
+                                        <msg>The CordInvoicePrefix field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Cord Invoice Counter</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.CordInvoiceCounter" name="CordInvoiceCounter" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.CordInvoiceCounter.$error" ng-show="refInvoiceNumCounterEditForm.CordInvoiceCounter.$dirty && refInvoiceNumCounterEditForm.CordInvoiceCounter.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.CordInvoiceCounter.$error.required">
+                                        <msg>The CordInvoiceCounter field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Cord Credit Prefix</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.CordCreditPrefix" name="CordCreditPrefix" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.CordCreditPrefix.$error" ng-show="refInvoiceNumCounterEditForm.CordCreditPrefix.$dirty && refInvoiceNumCounterEditForm.CordCreditPrefix.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.CordCreditPrefix.$error.required">
+                                        <msg>The CordCreditPrefix field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Cord Credit Counter</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.CordCreditCounter" name="CordCreditCounter" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.CordCreditCounter.$error" ng-show="refInvoiceNumCounterEditForm.CordCreditCounter.$dirty && refInvoiceNumCounterEditForm.CordCreditCounter.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.CordCreditCounter.$error.required">
+                                        <msg>The CordCreditCounter field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">NCBCN Invoice Prefix</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.NCBCNInvoicePrefix" name="NCBCNInvoicePrefix" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.NCBCNInvoicePrefix.$error" ng-show="refInvoiceNumCounterEditForm.NCBCNInvoicePrefix.$dirty && refInvoiceNumCounterEditForm.NCBCNInvoicePrefix.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.NCBCNInvoicePrefix.$error.required">
+                                        <msg>The NCBCNInvoicePrefix field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">NCBCN Invoice Counter</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.NCBCNInvoiceCounter" name="NCBCNInvoiceCounter" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.NCBCNInvoiceCounter.$error" ng-show="refInvoiceNumCounterEditForm.NCBCNInvoiceCounter.$dirty && refInvoiceNumCounterEditForm.NCBCNInvoiceCounter.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.NCBCNInvoiceCounter.$error.required">
+                                        <msg>The NCBCNInvoiceCounter field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">NCBCN Credit Prefix</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.NCBCNCreditPrefix" name="NCBCNCreditPrefix" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.NCBCNCreditPrefix.$error" ng-show="refInvoiceNumCounterEditForm.NCBCNCreditPrefix.$dirty && refInvoiceNumCounterEditForm.NCBCNCreditPrefix.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.NCBCNCreditPrefix.$error.required">
+                                        <msg>The NCBCNCreditPrefix field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">NCBCN Credit Counter</div>
+                            <div class="col-md-8">
+                                <input ng-model="InvoiceNumCounterDetail.NCBCNCreditCounter" name="NCBCNCreditCounter" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refInvoiceNumCounterEditForm.NCBCNCreditCounter.$error" ng-show="refInvoiceNumCounterEditForm.NCBCNCreditCounter.$dirty && refInvoiceNumCounterEditForm.NCBCNCreditCounter.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refInvoiceNumCounterEditForm.NCBCNCreditCounter.$error.required">
+                                        <msg>The NCBCNCreditCounter field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Save" ng-disabled="refInvoiceNumCounterEditForm.$invalid">Save</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+</div>

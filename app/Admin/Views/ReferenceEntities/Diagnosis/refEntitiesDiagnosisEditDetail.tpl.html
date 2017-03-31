@@ -1,0 +1,85 @@
+﻿<div ng-controller="refEntitiesDiagnosisDetailController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refDiagnosisEditForm" ng-submit="Save()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Category Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="DiagnosisDetail.CategoryCode" name="CategoryCode" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refDiagnosisEditForm.CategoryCode.$error" ng-show="refDiagnosisEditForm.CategoryCode.$dirty && refDiagnosisEditForm.CategoryCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refDiagnosisEditForm.CategoryCode.$error.required">
+                                        <msg>Category code field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Category Description</div>
+                            <div class="col-md-8">
+                                <input ng-model="DiagnosisDetail.CategoryDescription" name="CategoryDescription" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refDiagnosisEditForm.CategoryDescription.$error" ng-show="refDiagnosisEditForm.CategoryDescription.$dirty && refDiagnosisEditForm.CategoryDescription.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refDiagnosisEditForm.CategoryDescription.$error.required">
+                                        <msg>Category Description field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">SubCategory Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="DiagnosisDetail.SubCategoryCode" name="SubCategoryCode" type="text" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refDiagnosisEditForm.SubCategoryCode.$error" ng-show="refDiagnosisEditForm.SubCategoryCode.$dirty && refDiagnosisEditForm.SubCategoryCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refDiagnosisEditForm.SubCategoryCode.$error.required">
+                                        <msg>SubCategory code field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">SubCategory Description</div>
+                            <div class="col-md-8">
+                                <input ng-model="DiagnosisDetail.SubCategoryDescription" name="SubCategoryDescription" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refDiagnosisEditForm.SubCategoryDescription.$error" ng-show="refDiagnosisEditForm.SubCategoryDescription.$dirty && refDiagnosisEditForm.SubCategoryDescription.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refDiagnosisEditForm.SubCategoryDescription.$error.required">
+                                        <msg>SubCategory Description field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Is Acceptable Treatment</div>
+                            <div class="col-md-8 pull-left">
+                                <input type="checkbox" value="DiagnosisDetail.IsAcceptableTreatment" ng-checked="DiagnosisDetail.IsAcceptableTreatment" />
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Save" ng-disabled="refDiagnosisEditForm.$invalid">Save</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+</div>

@@ -1,0 +1,32 @@
+﻿<div class="patients" ng-controller="patientDetailController">
+   
+    <div class="BorderBox">
+        <h2>{{title}}</h2>
+        <h4>{{Id}}</h4>
+        <p>
+            <input type="text" ng-model="model.content1" /><br />
+            Content: {{model.content1}}
+            
+        </p>
+        <div><mp-date-control ng-model="model.content10"></mp-date-control></div>
+        <div>
+        <label>Auto Complete</label>
+        <mp-auto-complete-dropdown options="model.autoCompleteDropdownOptions"></mp-auto-complete-dropdown></div>
+
+        <div>
+            <label>Pick a time between 8am and 5pm:</label>
+            <input type="time" id="exampleInput" name="input" ng-model="model.datetime"
+                   placeholder="HH:mm:ss" min="08:00:00" max="17:00:00" required />
+        </div>
+
+        <div>
+            <label>Datetime Control</label>
+            <mp-datetime-control ng-model="model.datetime"></mp-datetime-control>
+        </div>
+        <div>
+            <button ng-click="checkDate()">Check Date</button>
+        </div>
+
+        <mp-tabset style="width:600px;" options="tabsetOptions"></mp-tabset>
+    </div>
+</div>

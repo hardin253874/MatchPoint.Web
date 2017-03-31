@@ -1,0 +1,77 @@
+﻿<div class="organisationUnits" ng-controller="ouDetailsTab1Controller">
+  
+    <div class="container">
+        <header>
+            <h2>{{title}}</h2>
+            </header>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-primary" ng-click="edit()">Edit</button>
+                    <button type="button" class="btn btn-primary" ng-click="back()">X</button>
+                </div>
+            </div>
+        </div>
+        <br />
+
+
+        <div class="row">
+            <div class="col-md-2">Name</div>
+            <div class="col-md-8">{{OrgUnit.Name}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Is GovernedBy</div>
+            <div class="col-md-8">{{OrgUnit.IsGovernedBy}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Short Description</div>
+            <div class="col-md-8">{{OrgUnit.ShortDescription}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Country Origin</div>
+            <div class="col-md-8">{{OrgUnit.CountryOrigin}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Telephone Country</div>
+            <div class="col-md-1">{{OrgUnit.TelephoneCountryId}}</div>
+
+            <div class="col-md-offset-1 col-md-2">Fax Country</div>
+            <div class="col-md-2">{{OrgUnit.FaxCountryId}}</div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Telephone Number</div>
+            <div class="col-md-1">{{OrgUnit.TelephoneNumber}}</div>
+            <div class="col-md-offset-1 col-md-2">Fax Number</div>
+            <div class="col-md-2">{{OrgUnit.TelephoneNumber}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">email</div>
+            <div class="col-md-8">{{OrgUnit.Email}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Web Site</div>
+            <div class="col-md-8">{{OrgUnit.WebSite}}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Office Hours</div>
+            <div class="col-md-8">{{OrgUnit.OfficeHours}}</div>
+        </div>
+
+
+
+</div>
+
+</div>

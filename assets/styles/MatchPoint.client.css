@@ -1,0 +1,333 @@
+/**
+   * This is the main application stylesheet. It should include or import all
+   * stylesheets used throughout the application as this is the only stylesheet in
+   * the Grunt configuration that is automatically processed.
+   */
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  max-height: 100%;
+  background-color: transparent;
+}
+html body {
+  overflow: hidden;
+  margin: 0;
+  padding-bottom: 0;
+  height: 100%;
+  max-height: 100%;
+  color: #000;
+  overflow: scroll;
+}
+html container-table {
+  height: 100%;
+  background-color: transparent;
+  display: table;
+}
+html vertical-center-row {
+  display: table-cell;
+  vertical-align: top;
+}
+.BorderBox {
+  box-sizing: border-box;
+  padding: 5px;
+  border: 5px solid #DDD;
+  border-color: #a3cbce;
+  height: 100%;
+}
+.BorderBoxTitle {
+  box-sizing: border-box;
+  padding: 5px;
+  border: 5px solid #DDD;
+  border-color: #a3cbce;
+  background-color: #a3cbce;
+  font-size: larger;
+}
+.gridHeader {
+  color: #ffffff;
+  background-color: black !important;
+}
+.btn-primary {
+  color: #ffffff;
+  background-color: #6da2a3;
+  border-color: #6da2a3;
+  font-weight: bold;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  border: 1px solid #6da2a3;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: black;
+}
+.spanColor {
+  color: #6da2a3;
+  text-decoration: none;
+  font-weight: 700;
+}
+.modal-header {
+  background-color: #a3cbce;
+}
+.validation-message {
+  color: #9a1919;
+  display: block;
+}
+.appLayout {
+  display: inline-block;
+  width: 1270px;
+  height: 400px;
+}
+.appLayout .default-nav-side-menu {
+  width: 20%;
+  vertical-align: middle;
+  display: inline-block;
+  float: left;
+}
+.appLayout .default-container {
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+  width: 80%;
+}
+.appLayout .dropdown-submenu {
+  position: relative;
+}
+.appLayout .dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  -webkit-border-radius: 0 6px 6px 6px;
+  -moz-border-radius: 0 6px 6px;
+  border-radius: 0 6px 6px 6px;
+}
+.appLayout .dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+.appLayout .dropdown-submenu > a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #ccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.appLayout .dropdown-submenu:hover > a:after {
+  border-left-color: #fff;
+}
+.appLayout .dropdown-submenu.pull-left {
+  float: none;
+}
+.appLayout .dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+.appLayout .layout-top,
+.appLayout .layout-bottom {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+.appLayout .layout-top.navheader,
+.appLayout .layout-bottom.navheader {
+  max-height: 42px;
+}
+.home {
+  display: inline-block;
+  width: 1170px;
+  height: 400px;
+}
+.home .nav-side-menu {
+  width: 20%;
+  vertical-align: middle;
+  display: inline-block;
+  float: left;
+}
+.home .container {
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+  width: 80%;
+}
+.patients {
+  font: #000;
+}
+.loginwrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.loginwrapper .wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.loginwrapper .form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.loginwrapper .form-signin .form-signin-heading,
+.loginwrapper .form-signin .checkbox {
+  margin-bottom: 30px;
+}
+.loginwrapper .form-signin .checkbox {
+  font-weight: normal;
+}
+.loginwrapper .form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.loginwrapper .form-signin .form-control:focus {
+  z-index: 2;
+}
+.loginwrapper .form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.loginwrapper .form-signin input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* NavBar - Start */
+.navbar-default .navbar-nav > li > a:hover {
+  color: black;
+  /*Sets the text hover color on navbar*/
+  background-color: #a3cbce;
+}
+.navbar-default .navbar-nav > li > a:focus {
+  color: black;
+  /*Sets the text hover color on navbar*/
+  background-color: #a3cbce;
+}
+.navbar-default .navbar-nav > .active > a {
+  color: black;
+  background-color: transparent;
+  font-weight: bold;
+}
+.navbar-default .navbar-nav > .active > a:hover {
+  color: black;
+  background-color: #a3cbce;
+}
+.navbar-default .navbar-nav > .active > a:focus {
+  color: black;
+  background-color: #a3cbce;
+}
+.navbar-default .navbar-nav > .open > a {
+  color: black;
+  background-color: #a3cbce;
+}
+.navbar-default .navbar-nav > .open > a:hover {
+  color: black;
+  background-color: #a3cbce;
+}
+.navbar-default {
+  background-color: transparent;
+  /* #0f006f; */
+  border-color: transparent;
+  /* #030033; */
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #a3cbce;
+  /* #66CCFF; */
+  /*change color of links in drop down here*/
+  border: 1px solid black;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #a3cbce;
+  /*Change rollover cell color here*/
+}
+.navbar-default .navbar-nav > li > a {
+  color: black;
+  /*Change active text color here*/
+}
+@media (max-width: 767px) {
+  .dropdown-menu > li > a:hover,
+  .dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #a3cbce;
+    /* #66CCFF; */
+    /*change color of links in drop down here*/
+    border: 1px solid black;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #262626 !important;
+    background-color: #a3cbce !important;
+  }
+  .mpNavbarAnchor {
+    text-align: right;
+  }
+}
+/* NavBar - End */
+input[type="text"].ui-grid-filter-input:hover {
+  border: 1px solid #d4d4d4;
+  color: black;
+}
+input[type="text"].ui-grid-filter-input {
+  color: black;
+}
+/*.ui-grid {
+    border: 1px solid #87ceeb;
+}
+
+.ui-grid-cell {
+    overflow: hidden;
+    background-color: transparent; /* inherit; */
+/*border-color: #87ceeb;
+    box-sizing: border-box;*/
+/*&:last-child {
+        border-right: 0;
+    }*/
+/*}
+    */
+/*------------------------------------------------------------------------ */
+.mp-date-control {
+  display: inline-table;
+  padding-left: 20px;
+}
+.mp-date-control .mp-date-control-value-wrapper {
+  display: table;
+}
+.mp-date-control .mp-date-control-button-wrapper {
+  padding-left: 10px;
+  display: table-cell;
+  max-width: 36px;
+}
+.mp-datetime-control {
+  display: inline-table;
+  padding-left: 20px;
+}
+.mp-datetime-control .mp-date-control-wrapper {
+  display: table;
+}
+.mp-datetime-control .mp-time-control-wrapper {
+  padding-left: 30px;
+  display: table-cell;
+}

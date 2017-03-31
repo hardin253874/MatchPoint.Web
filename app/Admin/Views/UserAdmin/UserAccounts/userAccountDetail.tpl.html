@@ -1,0 +1,158 @@
+﻿    <div ng-controller="userAccountDetailTab1Controller">        
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <div class="btn-group pull-right">
+                    <ng-md-icon data-toggle="modal" data-target="#modalNewPassword" title="New Password" style="fill:#a3cbce;cursor:pointer" icon="transform"></ng-md-icon>
+                    <ng-md-icon data-toggle="modal" data-target="#modalLockAccount" title="Lock Account" style="fill:#a3cbce;cursor:pointer" icon="lock"></ng-md-icon>
+                    <ng-md-icon data-toggle="modal" data-target="#modalDeActivateAccount" title="Deactivate" style="fill:#a3cbce;cursor:pointer" icon="healing"></ng-md-icon>
+                    <ng-md-icon ng-click="EditItem()" title="Edit Item" style="fill:#a3cbce;cursor:pointer" icon="create"></ng-md-icon>
+                    <ng-md-icon ng-click="Close()" title="Close" style="fill:#a3cbce;cursor:pointer" icon="cancel"></ng-md-icon>
+                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalNewPassword">New Password</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLockAccount">Lock Account</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDeActivateAccount">DeActivate</button>
+                    <button type="button" class="btn btn-primary" ng-click="EditItem()">Edit</button>
+                    <button type="button" class="btn btn-primary" ng-click="Close()">Close</button>-->
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">UserName</div>
+                    <div class="col-md-8">{{UserAccountDetails.userName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">email</div>
+                    <div class="col-md-8">{{UserAccountDetails.email}}</div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">Alternate email</div>
+                    <div class="col-md-8">{{UserAccountDetails.alternateEmail}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">2FA Method</div>
+                    <div class="col-md-8">{{UserAccountDetails.authMethod}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Last Active</div>
+                    <div class="col-md-8">{{UserAccountDetails.lastActive}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Last Login</div>
+                    <div class="col-md-8">{{UserAccountDetails.lastLogin}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Created</div>
+                    <div class="col-md-8">{{UserAccountDetails.created}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Is Locked?</div>
+                    <div class="col-md-8">{{UserAccountDetails.isLocked}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Comment</div>
+                    <div class="col-md-8">{{UserAccountDetails.comment}}</div>
+                </div>
+            </div>
+       </div>
+        <br />
+        <br />
+        <button data-toggle="collapse" data-target="#divUserRole" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon glyphicon-arrow-down"></span> User Roles</button>
+        
+        <div class="collapse in" id="divUserRole">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-4">Role Name</div>
+                        <div class="col-md-8">{{UserRoles.RoleName}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">AllUsers</div>
+                        <div class="col-md-8">{{UserRoles.AllUsers}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">UpdatePatientApplicationDetails</div>
+                        <div class="col-md-8">{{UserRoles.UpdatePatientApplicationDetails}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">UpdateTasks</div>
+                        <div class="col-md-8">{{UserRoles.UpdatePatientTasks}}</div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <h4>{{$scope.Message}}</h4>
+            </div>
+        </div>
+
+        <!-- Modal - New Password -->
+        <div class="modal fade" id="modalNewPassword" role="dialog">
+            <div class="modal-dialog">               
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New Password</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Reset to Random Password and Email User</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Modal - LockAccount -->
+        <div class="modal fade" id="modalLockAccount" role="dialog">
+            <div class="modal-dialog">         
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Lock Account</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to lock account?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal - Deactivate Account -->
+        <div class="modal fade" id="modalDeActivateAccount" role="dialog">
+            <div class="modal-dialog">            
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">DeActivate Account</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to DeActivate Account?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>

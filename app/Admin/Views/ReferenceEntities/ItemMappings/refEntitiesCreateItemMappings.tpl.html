@@ -1,0 +1,65 @@
+﻿<div ng-controller="refEntitiesCreateItemMappingController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refItemMappingCreateForm" ng-submit="CreateItemMapping()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Source Entity</div>
+                            <div class="col-md-8">
+                                <input ng-model="ItemMappingDetail.SourceEntity" name="SourceEntity" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                <div ng-messages="refItemMappingCreateForm.SourceEntity.$error" ng-show="refItemMappingCreateForm.SourceEntity.$dirty && refItemMappingCreateForm.SourceEntity.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refItemMappingCreateForm.SourceEntity.$error.required">
+                                        <msg>The Source Entity field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Mapped From</div>
+                            <div class="col-md-8">
+                                <input ng-model="ItemMappingDetail.MappedFrom" name="MappedFrom" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                <div ng-messages="refItemMappingCreateForm.MappedFrom.$error" ng-show="refItemMappingCreateForm.MappedFrom.$dirty && refItemMappingCreateForm.MappedFrom.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refItemMappingCreateForm.MappedFrom.$error.required">
+                                        <msg>The Mapped From field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Mapped To</div>
+                            <div class="col-md-8">
+                                <input ng-model="ItemMappingDetail.MappedTo" name="MappedTo" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                <div ng-messages="refItemMappingCreateForm.MappedTo.$error" ng-show="refItemMappingCreateForm.MappedTo.$dirty && refItemMappingCreateForm.MappedTo.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refItemMappingCreateForm.MappedTo.$error.required">
+                                        <msg>The MappedTo field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create" ng-disabled="refItemMappingCreateForm.$invalid">Create</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>

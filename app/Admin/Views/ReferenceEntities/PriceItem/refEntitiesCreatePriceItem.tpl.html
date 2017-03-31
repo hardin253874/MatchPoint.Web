@@ -1,0 +1,65 @@
+﻿<div ng-controller="refEntitiesCreatePriceItemController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refPriceItemCreateForm" ng-submit="CreatePriceItem()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Item Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="PriceItemDetail.ItemCode" name="ItemCode" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                <div ng-messages="refPriceItemCreateForm.ItemCode.$error" ng-show="refPriceItemCreateForm.ItemCode.$dirty && refPriceItemCreateForm.ItemCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refPriceItemCreateForm.ItemCode.$error.required">
+                                        <msg>The Item Code field is required</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Description</div>
+                            <div class="col-md-8">
+                                <input ng-model="PriceItemDetail.Description" name="Description" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refPriceItemCreateForm.Description.$error" ng-show="refPriceItemCreateForm.Description.$dirty && refPriceItemCreateForm.Description.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refPriceItemCreateForm.Description.$error.required">
+                                        <msg>The Description field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Invoice Description</div>
+                            <div class="col-md-8">
+                                <input ng-model="PriceItemDetail.InvoiceDescription" name="InvoiceDescription" type="text" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refPriceItemCreateForm.InvoiceDescription.$error" ng-show="refPriceItemCreateForm.InvoiceDescription.$dirty && refPriceItemCreateForm.InvoiceDescription.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refPriceItemCreateForm.InvoiceDescription.$error.required">
+                                        <msg>The Invoice Description field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create" ng-disabled="refPriceItemCreateForm.$invalid">Create</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>

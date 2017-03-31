@@ -1,0 +1,37 @@
+﻿<div ng-controller="refEntitiesConfigurationDetailController">   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <div class="btn-group pull-right">                    
+                    <ng-md-icon ng-click="EditItem()" title="Edit Item" style="fill:#a3cbce;cursor:pointer" icon="create"></ng-md-icon>
+                    <ng-md-icon ng-click="Close()" title="Close" style="fill:#a3cbce;cursor:pointer" icon="cancel"></ng-md-icon>
+                    <!--<button type="button" class="btn btn-primary" ng-click="EditItem()">Edit</button>
+                    <button type="button" class="btn btn-primary" ng-click="Close()">Close</button>-->
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Key</div>
+                    <div class="col-md-8">{{ConfigurationDetail.Key}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">Value</div>
+                    <div class="col-md-8">{{ConfigurationDetail.Value}}</div>
+                </div>
+
+                <br />
+                <br />
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+</div>

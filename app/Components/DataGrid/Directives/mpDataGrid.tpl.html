@@ -1,0 +1,21 @@
+﻿<div>
+    <div class="row" ng-if="model.showSearchSection">
+        <div class="col-sm-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Name..."  name="name" ng-model="model.searchText" />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="searchGrid()">Filter</button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+    </div><!-- /.row -->
+    <div class="row" ng-show="model.showDeactvated">
+        <div class="col-sm-3">
+            <div class="input-group">
+            include deactvated <input type="checkbox" ng-model="model.includeDeactvated" />
+            </div><!-- /input-group -->
+        </div>
+    </div>
+    <br />
+    <div ui-grid-selection ui-grid-pagination ui-grid-exporter ui-grid-move-columns ui-grid="gridOptions"></div>
+</div>

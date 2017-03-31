@@ -1,0 +1,65 @@
+﻿<style>
+    input.ng-invalid {
+        background-color: red;
+    }
+
+    input.ng-valid {
+        background-color: lightgreen;
+    }
+    form.ng-pristine {
+    background-color: lightblue;
+    }
+    form.ng-dirty {
+        background-color: lightgoldenrodyellow;
+    }
+</style>
+<div ng-controller="userAccountDetailController" class="userAccountDetail">
+    <mp-navbar options="navOption"></mp-navbar>
+    <h2>User Account Details - {{UserAccountDetails.userName}}</h2>    
+    <br />
+    <div class="row">
+        <div class="col-md-7">            
+            <div class="row">
+                <div class="col-md-4">email</div>
+                <div class="col-md-8">
+                    <input ng-show="editing" ng-model="UserAccountDetails.email" autofocus />
+                    <span ng-hide="editing">{{UserAccountDetails.email}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Alternate email</div>
+                <div class="col-md-8">
+                    <input ng-show="editing" ng-model="UserAccountDetails.alternateEmail" />
+                    <span ng-hide="editing">{{UserAccountDetails.alternateEmail}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">2FA Method</div>
+                <div class="col-md-8">
+                    <select data-ng-options="authMethod.name for authMethod in authMethodValues" data-ng-model="selectedAuthValue"></select>                    
+                    <span ng-hide="editing">{{UserAccountDetails.authMethod}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Comment</div>
+                <div class="col-md-8">
+                    <input ng-show="editing" ng-model="UserAccountDetails.comment" />
+                    <span ng-hide="editing">{{UserAccountDetails.comment}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <h4>{{Message}}</h4>
+    <br />   
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-6"><button type="button" ng-show="editing" class="btn btn-primary pull-right" ng-click="Save()">Save</button></div>
+                <div class="col-md-6"><button type="button" ng-show="editing" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+            </div>
+        </div>
+    </div>
+</div>

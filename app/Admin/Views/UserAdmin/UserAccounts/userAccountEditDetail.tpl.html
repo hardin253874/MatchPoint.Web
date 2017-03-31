@@ -1,0 +1,77 @@
+﻿<style>
+    input.ng-invalid {
+        /*background-color: red;*/
+    }
+
+    input.ng-valid {
+        /*background-color: lightgreen;*/
+    }
+
+    form.ng-pristine {
+        /*background-color: lightblue;*/
+    }
+
+    form.ng-dirty {
+        /*background-color: lightgoldenrodyellow;*/
+    }
+</style>
+<div ng-controller="userAccountDetailTab1Controller" class="userAccountDetail" ng-submit="submit()">
+    <!--<mp-navbar options="navOption"></mp-navbar>-->
+    <ul>
+        <li id="errorMessages" class="error alert-danger " data-ng-repeat="error in Errors">{{error}}</li>
+    </ul>
+
+    <h2>User Account Details - {{UserAccountDetails.userName}}</h2>
+    <br />
+    <form vmsg-form name="userAccountForm" ng-submit="submit()" style="width:600px;">
+        <div class="form-group">
+            <label>email:</label>
+            <input ng-model="UserAccountDetails.email" class="form-control" type="email" vmsg="{showTrigger: 'blur', label: 'email'}" name="email" required ng-show="editing" />
+            <span ng-hide="editing">{{UserAccountDetails.email}}</span>
+        </div>
+        <div class="form-group">
+            <label>Alternate email:</label>
+            <input ng-model="UserAccountDetails.alternateEmail" class="form-control" type="email" vmsg="{showTrigger: 'blur'}" required ng-show="editing" />
+            <span ng-hide="editing">{{UserAccountDetails.alternateEmail}}</span>
+        </div>
+        <div class="form-group">
+            <label>2FA Method:</label>
+            <select class="form-control" data-ng-options="authMethod.Name for authMethod in authMethodValues" data-ng-model="selectedAuthValue" required name="authMethod" vmsg ng-show="editing"></select>
+            <span ng-hide="editing">{{UserAccountDetails.authMethod}}</span>
+        </div>
+        <div class="form-group">
+            <label>comment:</label>
+            <input ng-model="UserAccountDetails.comment" class="form-control" type="text" vmsg="{showTrigger: 'blur', label: 'comment'}" required ng-minlength="10" ng-show="editing" />
+            <span ng-hide="editing">{{UserAccountDetails.comment}}</span>
+        </div>
+        <div class="form-group">
+            <label>Mobile Number:</label>
+            <input ng-model="UserAccountDetails.mobileNumber" class="form-control" type="text" required mp-mobile-number-validation name="mobileNumber" ng-show="editing" />
+            <span ng-hide="editing">{{UserAccountDetails.mobileNumber}}</span>
+            <div ng-messages="userAccountForm.mobileNumber.$error" ng-show="editing && userAccountForm.mobileNumber.$dirty && userAccountForm.mobileNumber.$error">
+                <span ng-message="required" class="ng-scope validation-message" ng-show="userAccountForm.mobileNumber.$error.required">
+                    <msg>Required mobile number!</msg>
+                </span>
+                <span ng-message="invalidMobileNumber" class="ng-scope validation-message" ng-show="userAccountForm.mobileNumber.$error.invalidMobileNumber"><msg>Mobile number is invalid!</msg></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>User Name:</label>
+            <input ng-model="UserAccountDetails.newUserName" class="form-control" type="text" mp-account-user-name-validation name="newUserName" ng-model-options="{ updateOn: 'blur' }" ng-show="editing" />
+            <span ng-hide="editing">{{UserAccountDetails.newUserName}}</span>
+            <div ng-messages="userAccountForm.newUserName.$error" ng-show="editing && userAccountForm.newUserName.$dirty && userAccountForm.newUserName.$error">               
+                <span ng-message="inValidAccountUserName" class="ng-scope validation-message" ng-show="userAccountForm.newUserName.$error.inValidAccountUserName"><msg>Duplicate Name!</msg></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+
+                    <div class="col-md-6"><input type="submit" value="Save" class="btn btn-primary pull-left" ng-show="editing" ng-disabled="userAccountForm.$invalid"></div>
+                    <div class="col-md-6"><button type="button" ng-show="editing" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

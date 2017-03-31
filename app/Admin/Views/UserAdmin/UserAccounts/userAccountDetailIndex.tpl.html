@@ -1,0 +1,22 @@
+﻿<div ng-controller="userAccountDetailController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <uib-tabset>
+            <uib-tab ng-repeat="tab in model.tabs" heading="{{ tab.heading }}" select="select(tab)">
+
+            </uib-tab>
+        </uib-tabset>
+        <ng-include src="model.tabContentUrl">
+
+        </ng-include>
+
+        <!--<tabset>
+            <tab ng-repeat="tab in tabs" heading="{{ tab.heading }}" active="tab.active">
+                <div ng-include="tab.template"></div>
+            </tab>
+        </tabset>-->
+    </div>
+</div>

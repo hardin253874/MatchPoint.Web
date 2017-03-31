@@ -1,0 +1,46 @@
+﻿<div ng-controller="refEntitiesCreateDriveFocusController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refDriveFocusCreateForm" ng-submit="CreateDriveFocus()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Name</div>
+                            <div class="col-md-8">
+                                <input ng-model="DriveFocusDetail.Name" name="Name" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                <div ng-messages="refDriveFocusCreateForm.Name.$error" ng-show="refDriveFocusCreateForm.Name.$dirty && refDriveFocusCreateForm.Name.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refDriveFocusCreateForm.Name.$error.required">
+                                        <msg>Category code field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create" ng-disabled="refDriveFocusCreateForm.$invalid">Create</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+﻿<div ng-controller="refEntitiesItemMappingDetailController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <div class="btn-group pull-right">
+                    <ng-md-icon ng-click="EditItem()" title="Edit Item" style="fill:#a3cbce;cursor:pointer" icon="create"></ng-md-icon>
+                    <ng-md-icon ng-click="Close()" title="Close" style="fill:#a3cbce;cursor:pointer" icon="cancel"></ng-md-icon>                    
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Source Entity</div>
+                    <div class="col-md-8">{{ItemMappingDetail.SourceEntity}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Mapped From</div>
+                    <div class="col-md-8">{{ItemMappingDetail.MappedFrom}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Mapped To</div>
+                    <div class="col-md-8">{{ItemMappingDetail.MappedTo}}</div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+</div>

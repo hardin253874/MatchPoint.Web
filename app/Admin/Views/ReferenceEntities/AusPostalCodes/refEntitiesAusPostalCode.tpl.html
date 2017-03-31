@@ -1,0 +1,25 @@
+﻿<div ng-controller="refEntitiesAusPostalCodeController">   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">
+        <br />
+        <div class="row">
+            <div class="col-md-9">
+            </div>
+            <div class="col-md-3">
+                <!--<div class="col-md-6">
+                    <label><strong>Include Deactivated&nbsp;&nbsp;</strong></label><input type="checkbox" disabled />
+                </div>-->
+                <div class="col-md-6">
+                    <!--<ng-md-icon ng-click="CreatePostalCode()" title="Create" style="fill:#a3cbce;cursor:pointer" icon="Create"></ng-md-icon>-->
+                    <button type="button" class="btn btn-primary" ng-click="CreatePostalCode()">New</button>
+                </div>
+            </div>
+        </div>    
+        <br />
+        <mp-datagrid options="gridOptions"></mp-datagrid>
+        <br />
+        <br />
+    </div>
+</div>

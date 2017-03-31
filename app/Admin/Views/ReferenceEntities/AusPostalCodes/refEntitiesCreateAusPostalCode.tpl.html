@@ -1,0 +1,84 @@
+﻿<div ng-controller="refEntitiesCreateAusPostCodeController">  
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">
+        <br />
+        <br />
+        <form vmsg-form name="refAusPostCodeCreateForm" ng-submit="CreatePostCode()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Postal Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.PostalCode" name="PostalCode" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                <div ng-messages="refAusPostCodeCreateForm.PostalCode.$error" ng-show="refAusPostCodeCreateForm.PostalCode.$dirty && refAusPostCodeCreateForm.PostalCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refAusPostCodeCreateForm.PostalCode.$error.required">
+                                        <msg>Please enter a postal code.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Locality</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.Locality" name="Locality" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refAusPostCodeCreateForm.Locality.$error" ng-show="refAusPostCodeCreateForm.Locality.$dirty && refAusPostCodeCreateForm.Locality.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refAusPostCodeCreateForm.Locality.$error.required">
+                                        <msg>Please enter a locality.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">State</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.State" name="RefState" type="text" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refAusPostCodeCreateForm.RefState.$error" ng-show="refAusPostCodeCreateForm.RefState.$dirty && refAusPostCodeCreateForm.RefState.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refAusPostCodeCreateForm.RefState.$error.required">
+                                        <msg>Please enter a state.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Category</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.Category" name="Category" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refAusPostCodeCreateForm.Category.$error" ng-show="refAusPostCodeCreateForm.Category.$dirty && refAusPostCodeCreateForm.Category.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refAusPostCodeCreateForm.Category.$error.required">
+                                        <msg>Please enter a category.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Comments</div>
+                            <div class="col-md-8">
+                                <input ng-model="AusPostalCodeDetail.Comments" name="State" class="form-control" vmsg="{showTrigger: 'keydown'}" />
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create" ng-disabled="refAusPostCodeCreateForm.$invalid">Create</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+</div>

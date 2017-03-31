@@ -1,0 +1,85 @@
+﻿<div ng-controller="refEntitiesFundingTypeDetailController">   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">      
+        <br />
+        <br />
+        <form vmsg-form name="refFundingTypeEditForm" ng-submit="Save()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Name</div>
+                            <div class="col-md-8">
+                                <input ng-model="FundingTypeDetail.Name" name="Name" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refFundingTypeEditForm.Name.$error" ng-show="refFundingTypeEditForm.Name.$dirty && refFundingTypeEditForm.Name.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refFundingTypeEditForm.Name.$error.required">
+                                        <msg>The Name field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Navision Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="FundingTypeDetail.NavisionCode" name="NavisionCode" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refFundingTypeEditForm.NavisionCode.$error" ng-show="refFundingTypeEditForm.NavisionCode.$dirty && refFundingTypeEditForm.NavisionCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refFundingTypeEditForm.NavisionCode.$error.required">
+                                        <msg>The NavisionCode field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Bill To Customer</div>
+                            <div class="col-md-8">
+                                <input ng-model="FundingTypeDetail.BillToCustomer" name="BillToCustomer" class="form-control" vmsg="{showTrigger: 'blur'}" autofocus required />
+                                <div ng-messages="refFundingTypeEditForm.BillToCustomer.$error" ng-show="refFundingTypeEditForm.BillToCustomer.$dirty && refFundingTypeEditForm.BillToCustomer.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refFundingTypeEditForm.BillToCustomer.$error.required">
+                                        <msg>The BillToCustomer field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Is International</div>
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="radio" name="IsInternational" ng-model="FundingTypeDetail.IsInternational" vmsg="{showTrigger: 'keydown'}" value="Yes"> Yes
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="radio" name="IsInternational" ng-model="FundingTypeDetail.IsInternational" vmsg="{showTrigger: 'keydown'}" value="No"> No
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="radio" name="IsInternational" ng-model="FundingTypeDetail.IsInternational" vmsg="{showTrigger: 'keydown'}" value="Unknown"> Unknown
+                                    </div>
+                                </div>
+                                <div ng-messages="refFundingTypeEditForm.IsInterational.$error" ng-show="refFundingTypeEditForm.IsInterational.$dirty && refFundingTypeEditForm.IsInterational.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refFundingTypeEditForm.IsInterational.$error.required">
+                                        <msg>The IsInternational field is required.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Save" ng-disabled="refFundingTypeEditForm.$invalid">Save</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+
+
+    </div>
+</div>

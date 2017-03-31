@@ -1,0 +1,53 @@
+﻿<div ng-controller="refEntitiesCreateCBUStatusChangedReasonController">   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">    
+    <br />
+    <br />
+    <form vmsg-form name="refCBUStatusChangedReasonCreateForm" ng-submit="CreateCBUStatusChangedReason()">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <div class="col-md-4">Status</div>
+                        <div class="col-md-8">
+                            <select class="form-control" data-ng-options="x for x in StatusItems" data-ng-model="selectedStatus" required name="Status" vmsg></select>
+                            <div ng-messages="refCBUStatusChangedReasonCreateForm.Status.$error" ng-show="refCBUStatusChangedReasonCreateForm.Status.$dirty && refCBUStatusChangedReasonCreateForm.Status.$error">
+                                <span ng-message="required" class="ng-scope validation-message" ng-show="refCBUStatusChangedReasonCreateForm.Status.$error.required">
+                                    <msg>The status is required.</msg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4">Description</div>
+                        <div class="col-md-8">
+                            <input ng-model="CBUStatusChangedReasonDetail.Description" name="Description" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                            <div ng-messages="refCBUStatusChangedReasonCreateForm.Description.$error" ng-show="refCBUStatusChangedReasonCreateForm.Description.$dirty && refCBUStatusChangedReasonCreateForm.Description.$error">
+                                <span ng-message="required" class="ng-scope validation-message" ng-show="refCBUStatusChangedReasonCreateForm.Description.$error.required">
+                                    <msg>Please enter a description.</msg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create" ng-disabled="refCBUStatusChangedReasonCreateForm.$invalid">Create</button></div>
+                        <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+</div>

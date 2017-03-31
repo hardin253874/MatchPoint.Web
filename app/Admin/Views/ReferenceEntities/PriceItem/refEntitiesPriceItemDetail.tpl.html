@@ -1,0 +1,44 @@
+﻿<div ng-controller="refEntitiesPriceItemDetailController">
+
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <div class="btn-group pull-right">
+                    <!--<ng-md-icon data-toggle="modal" data-target="#modalDeActivate" title="Deactivate" style="fill:#a3cbce;cursor:pointer" icon="healing"></ng-md-icon>-->
+                    <ng-md-icon ng-click="EditItem()" title="Edit Item" style="fill:#a3cbce;cursor:pointer" icon="create"></ng-md-icon>
+                    <ng-md-icon ng-click="Close()" title="Close" style="fill:#a3cbce;cursor:pointer" icon="cancel"></ng-md-icon>
+                    <!--<button type="button" class="btn btn-primary" ng-click="EditItem()">Edit</button>
+                    <button type="button" class="btn btn-primary" ng-click="Close()">Close</button>-->
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Item Code</div>
+                    <div class="col-md-8">{{PriceItemDetail.ItemCode}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Description</div>
+                    <div class="col-md-8">{{PriceItemDetail.Description}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Invoice Description</div>
+                    <div class="col-md-8">{{PriceItemDetail.InvoiceDescription}}</div>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+</div>

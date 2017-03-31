@@ -1,0 +1,47 @@
+﻿<div ng-controller="refEntitiesCreateRelationshipTypeController">
+ 
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refRelationshipTypeCreateForm" ng-submit="CreateRelationshipType()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Name</div>
+                            <div class="col-md-8">
+                                <input ng-model="RelationshipTypeDetail.Name" name="Name" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                <div ng-messages="refRelationshipTypeCreateForm.Name.$error" ng-show="refRelationshipTypeCreateForm.Name.$dirty && refRelationshipTypeCreateForm.Name.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refRelationshipTypeCreateForm.Name.$error.required">
+                                        <msg>The name field is required</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Solitary</div>
+                            <div class="col-md-8">
+                                <input type="checkbox" ng-model="RelationshipTypeDetail.Solitary" name="Solitary" />
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create" ng-disabled="refRelationshipTypeCreateForm.$invalid">Create</button></div>
+                                <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+        </form>
+    </div>
+</div>

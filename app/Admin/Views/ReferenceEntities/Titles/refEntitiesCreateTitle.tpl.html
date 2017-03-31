@@ -1,0 +1,42 @@
+﻿<div ng-controller="refEntitiesCreateTitleController">
+      
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refTitleCreateForm" ng-submit="CreateTitle()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Name</div>
+                            <div class="col-md-8">
+                                <input ng-model="Name" name="TitleName" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refTitleCreateForm.TitleName.$error" ng-show="refTitleCreateForm.TitleName.$dirty && refTitleCreateForm.TitleName.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refTitleCreateForm.TitleName.$error.required">
+                                        <msg>Please enter a name.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-6"><button type="submit" value="Create" class="btn btn-primary pull-right" ng-disabled="refTitleCreateForm.$invalid">Create</button></div>
+                        <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

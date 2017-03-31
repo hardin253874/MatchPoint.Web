@@ -1,0 +1,48 @@
+﻿<div ng-controller="refEntitiesCBUStatusChangedReasonDetailController"> 
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refCBUStatusChangedReasonEditForm" ng-submit="Save()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Status</div>
+                            <div class="col-md-8">
+                                <span ng-model="CBUStatusChangedReasonDetail.Status" name="Status" class="form-control">{{CBUStatusChangedReasonDetail.Status}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Description</div>
+                            <div class="col-md-8">
+                                <input ng-model="CBUStatusChangedReasonDetail.Description" name="Description" type="text" class="form-control" vmsg="{showTrigger: 'blur'}" required />
+                                <div ng-messages="refCBUStatusChangedReasonEditForm.Description.$error" ng-show="refCBUStatusChangedReasonEditForm.Description.$dirty && refCBUStatusChangedReasonEditForm.Description.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refCBUStatusChangedReasonEditForm.Description.$error.required">
+                                        <msg>Please enter a description.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Save" ng-disabled="refCBUStatusChangedReasonEditForm.$invalid">Save</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+    </div>
+

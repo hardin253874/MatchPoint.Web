@@ -1,0 +1,111 @@
+﻿<div ng-controller="orgUnitRepCreateRoleController">
+      
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <div>
+            <br />
+            <form vmsg-form name="orgUnitRepCreateRoleForm" ng-submit="CreateOURole()" role="form">
+                <div class="form-group">
+                    <div class="row">
+                        <label for="RoleName" class="col-md-2 control-label">Role Name</label>
+                        <div class="col-md-4">
+                            <input ng-model="OrgUnitRepRolesDetail.RoleName" id="RoleName" name="RoleName" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                            <div ng-messages="orgUnitRepCreateRoleForm.RoleName.$error" ng-show="orgUnitRepCreateRoleForm.RoleName.$dirty && orgUnitRepCreateRoleForm.RoleName.$error">
+                                <span ng-message="required" class="ng-scope validation-message" ng-show="orgUnitRepCreateRoleForm.RoleName.$error.required">
+                                    <msg>Please enter a role name.</msg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <label for="chkRoles" class="col-md-2 control-label">User Roles</label>
+                        <div class="col-md-4">
+                            <span id="chkRoles" ng-repeat="userRepRole in OrgUnitRepRolesDetail.UserRoles">
+                                <input type="checkbox" value="userRepRole.Name" ng-checked="userRepRole.Matched" />
+                                <label>{{userRepRole.Name}}</label>
+                                <br />
+                            </span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <label for="OrgUnitTypes" class="col-md-2 control-label">Organisation Unit Types</label>
+                        <div class="col-md-4">
+                            <span id="OrgUnitTypes" ng-repeat="orgUnitType in OrgUnitRepRolesDetail.OrganizationUnitTypes">
+                                <input type="checkbox" value="orgUnitType.Name" ng-checked="orgUnitType.Matched" />
+                                <label>{{orgUnitType.Name}}</label>
+                                <br />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <label class="col-md-2 control-label"></label>
+                    <div class="col-md-4">
+
+                        <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create OU Role" ng-disabled="orgUnitRepCreateRole.$invalid">Create OU Role</button></div>
+                        <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+
+                    </div>
+                </div>
+                <!--<div class="form-group">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-4 "><label>Role Name</label></div>
+                                <div class="col-md-8">
+                                    <input ng-model="OrgUnitRepRolesDetail.RoleName" id="RoleName" name="RoleName" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                    <div ng-messages="orgUnitRepCreateRoleForm.RoleName.$error" ng-show="orgUnitRepCreateRoleForm.RoleName.$dirty && orgUnitRepCreateRoleForm.RoleName.$error">
+                                        <span ng-message="required" class="ng-scope validation-message" ng-show="orgUnitRepCreateRoleForm.RoleName.$error.required">
+                                            <msg>Please enter a role name.</msg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4"><label>User Roles</label></div>
+                                <div class="col-md-8">
+                                    <span ng-repeat="userRepRole in OrgUnitRepRolesDetail.UserRoles">
+                                        <input type="checkbox" value="userRepRole.Name" ng-checked="userRepRole.Matched" />
+                                        <label>{{userRepRole.Name}}</label>
+                                        <br />
+                                    </span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4"><label>Organisation Unit Types</label></div>
+                                <div class="col-md-8">
+                                    <span ng-repeat="orgUnitType in OrgUnitRepRolesDetail.OrganizationUnitTypes">
+                                        <input type="checkbox" value="orgUnitType.Name" ng-checked="orgUnitType.Matched" />
+                                        <label>{{orgUnitType.Name}}</label>
+                                        <br />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create OU Role" ng-disabled="orgUnitRepCreateRole.$invalid">Create OU Role</button></div>
+                                <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>-->
+            </form>
+        </div>
+    </div>
+</div>

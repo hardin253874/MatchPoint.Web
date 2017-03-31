@@ -1,0 +1,98 @@
+﻿<style>
+    input.ng-invalid {
+        background-color: red;
+    }
+
+</style>
+<div class="organisationUnits" ng-controller="ouDetailsTab1Controller">
+
+    <div class="container">
+        <header>
+            <h2>{{title}}</h2>
+        </header>
+
+        <br />
+
+      
+       
+        <form vmsg-form class="form-horizontal" name="ouDetailsForm" ng-submit="submit()">
+            <ul>
+                <li id="errorMessages" class="error alert-danger " data-ng-repeat="error in Errors">{{error}}</li>
+            </ul>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.Name" class="form-control" type="text"  />
+                  
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Is Governed By:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.IsGovernedBy" class="form-control" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Short Description:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.ShortDescription" class="form-control" type="text" vmsg required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Country Origin:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.Country" class="form-control" type="text" vmsg required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Telephone Country:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.TelephoneCountryId" name ="telephoneCountryId"class="form-control" type="text" vmsg mp-country-code-validation="61,1,01"/>
+                    <span ng-message="invalidCountryCode" class="ng-scope validation-message" ng-show="ouDetailsForm.telephoneCountryId.$error.invalidCountryCode"><msg>Telephone Country is invalid!</msg></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Telephone Number:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.TelephoneNumber" class="form-control" type="text" vmsg ng-required='OrgUnit.TelephoneCountryId' />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">email:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.email" class="form-control" type="email" vmsg required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Web Site:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.WebSite" class="form-control" type="text" vmsg required/>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Office Hours:</label>
+                <div class="col-sm-5">
+                    <input ng-model="OrgUnit.OfficeHours" class="form-control" type="text" vmsg required/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Save" class="btn btn-default pull-left" ng-disabled="ouDetailsForm.$untouched && ouDetailsForm.$invalid">
+                    <button type="button"  class="btn btn-primary pull-left" ng-click="cancel()">Cancel</button>
+                </div>
+            </div>
+
+
+
+        </form>
+    </div>
+
+</div>

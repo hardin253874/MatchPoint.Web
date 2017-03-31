@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BDE2BC0F-F831-4C5D-A9BE-DD47FFB6465B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MatchPoint.Web</RootNamespace>
+    <AssemblyName>MatchPoint.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.HttpListener, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.2.0.2\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=2.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Hosting.2.0.2\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.4\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.tests\karma.conf.js" />
+    <Content Include="app.tests\tests\organisationUnitDetails.test.js" />
+    <Content Include="app.tests\tests\organisationUnit.test.js" />
+    <Content Include="app.tests\tests\donors.test.js" />
+    <Content Include="app.tests\tests\1.patients.test.js" />
+    <Content Include="app\Admin\admin.module.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\AusPostalCodes\refEntitiesAusPostalCode.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\AusPostalCodes\refEntitiesAusPostCodeDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\AusPostalCodes\refEntitiesCreateAusPostalCode.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\CBUStatusChangedReason\refEntitiesCBUStatusChangedReason.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\CBUStatusChangedReason\refEntitiesCBUStatusChangedReasonDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\CBUStatusChangedReason\refEntitiesCreateCBUStatusChangedReason.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Configuration\refEntitiesConfiguration.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Configuration\refEntitiesConfigurationDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Countries\refEntitiesCountries.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Countries\refEntitiesCountryDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Countries\refEntitiesCreateCountry.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Diagnosis\refEntitiesCreateDiagnosis.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Diagnosis\refEntitiesDiagnosis.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Diagnosis\refEntitiesDiagnosisDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveFocus\refEntitiesCreateDriveFocus.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveFocus\refEntitiesDriveFocus.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveFocus\refEntitiesDriveFocusDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveStatus\refEntitiesCreateDriveStatus.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveStatus\refEntitiesDriveStatus.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveStatus\refEntitiesDriveStatusDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveType\refEntitiesCreateDriveType.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveType\refEntitiesDriveType.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\DriveType\refEntitiesDriveTypeDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\FundingType\refEntitiesCreateFundingType.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\FundingType\refEntitiesFundingType.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\FundingType\refEntitiesFundingTypeDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\InvoiceNumberCounters\refEntitiesCreateInvoiceNumCounters.controllers.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\InvoiceNumberCounters\refEntitiesInvoiceNumCounters.controllers.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\InvoiceNumberCounters\refEntitiesInvoiceNumCountersDetail.controllers.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\ItemMappings\refEntitiesCreateItemMappings.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\ItemMappings\refEntitiesItemMappings.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\ItemMappings\refEntitiesItemMappingsDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Languages\refEntitiesCreateLanguage.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Languages\refEntitiesLanguage.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Languages\refEntitiesLanguageDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Nationalities\refEntitiesNationalities.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Nationalities\refEntitiesNationalitiesDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Nationalities\refEntitiesCreateNationalities.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\OperationalMetrics\refEntitiesOperationalMetrics.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\OperationalMetrics\refEntitiesOperationalMetricsEditDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\PriceItem\refEntitiesCreatePriceItem.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\PriceItem\refEntitiesPriceItem.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\PriceItem\refEntitiesPriceItemDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\RelationshipType\refEntitiesCreateRelationType.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\RelationshipType\refEntitiesRelationType.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\RelationshipType\refEntitiesRelationTypeDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\ReqNotifyConfiguration\refEntitiesReqNotifyConfigurationDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\StatusChangedReason\refEntitiesCreateStatusChangedReason.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\StatusChangedReason\refEntitiesStatusChangedReason.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\StatusChangedReason\refEntitiesStatusChangedReasonDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Titles\refEntitiesCreateTitle.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Titles\refEntitiesTitleDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\Titles\refEntitiesTitles.controller.js" />
+    <Content Include="app\Admin\Controllers\UserAdmin\OURepRoles\orgUnitRepresentativeCreateRole.controller.js" />
+    <Content Include="app\Admin\Controllers\UserAdmin\OURepRoles\orgUnitRepresentativeRoles.controller.js" />
+    <Content Include="app\Admin\Controllers\UserAdmin\OURepRoles\orgUnitRepresentativeRolesDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\ReferenceEntities\refEntitiesIndex.controller.js" />
+    <Content Include="app\Admin\Controllers\UserAdmin\UserAccounts\userAccountAttachments.controller.js" />
+    <Content Include="app\Admin\Controllers\UserAdmin\UserAccounts\userAccountDetail.controller.js" />
+    <Content Include="app\Admin\Controllers\UserAdmin\UserAccounts\userAccountDetailIndex.controller.js" />
+    <Content Include="app\Admin\Controllers\UserAdmin\UserAccounts\userAccounts.controller.js" />
+    <Content Include="app\Admin\Controllers\UserAdmin\userAdminIndex.controller.js" />
+    <Content Include="app\Admin\Services\Admin.Service.js" />
+    <Content Include="app\Admin\Services\orgUnitRepresentativeRoles.Service.js" />
+    <Content Include="app\Admin\Services\refEntities.Service.js" />
+    <Content Include="app\Admin\Views\ReferenceEntities\AusPostalCodes\refEntitiesAusPostalCode.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\AusPostalCodes\refEntitiesAusPostCodeDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\AusPostalCodes\refEntitiesAusPostCodeEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\AusPostalCodes\refEntitiesCreateAusPostalCode.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\CBUStatusChangedReason\refEntitiesCreateCBUStatusChangedReason.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\CBUStatusChangedReason\refEntitiesCBUStatusChangedReason.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\CBUStatusChangedReason\refEntitiesCBUStatusChangedReasonDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\CBUStatusChangedReason\refEntitiesCBUStatusChangedReasonEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Configuration\refEntitiesConfiguration.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Configuration\refEntitiesConfigurationDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Configuration\refEntitiesConfigurationEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Countries\refEntitiesCountries.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Countries\refEntitiesCountryDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Countries\refEntitiesCountryEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Countries\refEntitiesCreateCountry.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Diagnosis\refEntitiesCreateDiagnosis.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Diagnosis\refEntitiesDiagnosis.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Diagnosis\refEntitiesDiagnosisDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Diagnosis\refEntitiesDiagnosisEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveFocus\refEntitiesCreateDriveFocus.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveFocus\refEntitiesDriveFocus.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveFocus\refEntitiesDriveFocusDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveFocus\refEntitiesDriveFocusEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveStatus\refEntitiesCreateDriveStatus.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveStatus\refEntitiesDriveStatus.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveStatus\refEntitiesDriveStatusDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveStatus\refEntitiesDriveStatusEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveType\refEntitiesCreateDriveType.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveType\refEntitiesDriveType.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveType\refEntitiesDriveTypeDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\DriveType\refEntitiesDriveTypeEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\FundingType\refEntitiesCreateFundingType.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\FundingType\refEntitiesFundingType.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\FundingType\refEntitiesFundingTypeDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\FundingType\refEntitiesFundingTypeEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\InvoiceNumberCounters\refEntitiesCreateInvoiceNumCounters.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\InvoiceNumberCounters\refEntitiesInvoiceNumCounters.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\InvoiceNumberCounters\refEntitiesInvoiceNumCountersDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\InvoiceNumberCounters\refEntitiesInvoiceNumCountersEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\ItemMappings\refEntitiesCreateItemMappings.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\ItemMappings\refEntitiesItemMappings.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\ItemMappings\refEntitiesItemMappingsDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\ItemMappings\refEntitiesItemMappingsEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Languages\refEntitiesCreateLanguage.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Languages\refEntitiesLanguage.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Languages\refEntitiesLanguageDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Languages\refEntitiesLanguageEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Nationalities\refEntitiesCreateNationalities.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Nationalities\refEntitiesNationalities.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Nationalities\refEntitiesNationalitiesDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Nationalities\refEntitiesNationalitiesEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\OperationalMetrics\refEntitiesOperationalMetrics.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\OperationalMetrics\refEntitiesOperationalMetricsEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\PriceItem\refEntitiesCreatePriceItem.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\PriceItem\refEntitiesPriceItem.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\PriceItem\refEntitiesPriceItemDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\PriceItem\refEntitiesPriceItemEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\RelationshipType\refEntitiesCreateRelationType.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\RelationshipType\refEntitiesRelationType.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\RelationshipType\refEntitiesRelationTypeDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\RelationshipType\refEntitiesRelationTypeEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\ReqNotifyConfiguration\refEntitiesReqNotifyConfigurationDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\ReqNotifyConfiguration\refEntitiesReqNotifyConfigurationEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\StatusChangedReason\refEntitiesCreateStatusChangedReason.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\StatusChangedReason\refEntitiesStatusChangedReason.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\StatusChangedReason\refEntitiesStatusChangedReasonDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\StatusChangedReason\refEntitiesStatusChangedReasonEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Titles\refEntitiesCreateTitle.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Titles\refEntitiesTitleDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Titles\refEntitiesTitleEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\Titles\refEntitiesTitles.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\OURepRoles\orgUnitRepresentativeCreateRole.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\OURepRoles\orgUnitRepresentativeRoles.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\OURepRoles\orgUnitRepresentativeRolesDetail.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\OURepRoles\orgUnitRepresentativeRolesEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\ReferenceEntities\refEntitiesIndex.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\UserAccounts\userAccountAttachments.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\UserAccounts\userAccountDetail.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\UserAccounts\userAccountDetailIndex.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\UserAccounts\userAccountEditDetail.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\userAccounts.css" />
+    <Content Include="app\Admin\Views\UserAdmin\UserAccounts\userAccounts.tpl.html" />
+    <Content Include="app\Admin\Views\UserAdmin\userAdminIndex.tpl.html" />
+    <Content Include="app\app.config.js" />
+    <Content Include="app\app.controller.js" />
+    <Content Include="app\app.module.js" />
+    <Content Include="app\Authentication\authentication.module.js" />
+    <Content Include="app\Authentication\Controllers\authentication.controller.js" />
+    <Content Include="app\Authentication\Services\authentication.services.js" />
+    <Content Include="app\Authentication\Views\login.tpl.html" />
+    <Content Include="app\Components\AutoComplete\Directives\mpAutoCompleteDropdown.directive.js" />
+    <Content Include="app\Components\AutoComplete\Directives\mpAutoCompleteDropdown.less" />
+    <Content Include="app\Components\AutoComplete\Directives\mpAutoCompleteDropdown.tpl.html" />
+    <Content Include="app\Components\AutoComplete\mpAutoComplete.module.js" />
+    <Content Include="app\Components\DataGrid\mpDataGridUtils.js" />
+    <Content Include="app\Components\DateControl\Directives\mpDateControl.directive.js" />
+    <Content Include="app\Components\DateControl\Directives\mpDateControl.tpl.html" />
+    <Content Include="app\Components\DateControl\Directives\mpDateTimeControl.directive.js" />
+    <Content Include="app\Components\DateControl\Directives\mpDateTimeControl.tpl.html" />
+    <Content Include="app\Components\DateControl\mpDateControl.module.js" />
+    <Content Include="app\Components\Notification\notification.module.js" />
+    <Content Include="app\Components\Notification\notification.service.js" />
+    <Content Include="app\Components\Tabset\Directives\mpTabset.directive.js" />
+    <Content Include="app\Components\Tabset\Directives\mpTabset.tpl.html" />
+    <Content Include="app\Components\Tabset\mpTabset.module.js" />
+    <Content Include="app\Components\Validation\Directives\mpAccountUserNameValidation.js" />
+    <Content Include="app\Components\Validation\Directives\mpCountryCodeValidation.js" />
+    <Content Include="app\Components\Validation\Directives\mpMobileNumberValidation.js" />
+    <Content Include="app\Components\Validation\Directives\mpMultipleEmailsValidation.js" />
+    <Content Include="app\Components\Validation\mpValidation.module.js" />
+    <Content Include="app\Components\WebService\mpWebService.module.js" />
+    <Content Include="app\Components\WebService\mpWebService.service.js" />
+    <Content Include="app\Donors\Controllers\donors.controller.js" />
+    <Content Include="app\Donors\donors.module.js" />
+    <Content Include="app\Donors\Views\donors.css" />
+    <Content Include="app\Donors\Views\donors.tpl.html" />
+    <Content Include="app\Governance\Controllers\OrganisationUnit\ouDetailsAlias.controller.js" />
+    <Content Include="app\Governance\Controllers\OrganisationUnit\ouDetails.controller.js" />
+    <Content Include="app\Governance\Controllers\OrganisationUnit\organisationUnits.controller.js" />
+    <Content Include="app\Governance\Controllers\OrganisationUnit\organisationUnits.module.js" />
+    <Content Include="app\Governance\governance.module.js" />
+    <Content Include="app\Governance\Services\OrganisationUnit.Service.js" />
+    <Content Include="app\Governance\Views\OrganisationUnit\organisationUnits.css" />
+    <Content Include="app\Governance\Views\OrganisationUnit\ouDetailsEdit.tpl.html" />
+    <Content Include="app\Governance\Views\OrganisationUnit\ouDetailsAlias.tpl.html" />
+    <Content Include="app\Governance\Views\OrganisationUnit\ouDetailsIndex.tpl.html" />
+    <Content Include="app\Governance\Views\OrganisationUnit\ouDetails.tpl.html" />
+    <Content Include="app\Governance\Views\OrganisationUnit\organisationUnits.tpl.html" />
+    <Content Include="app\Navigation\Controllers\home.controller.js" />
+    <Content Include="app\Navigation\Directives\navbar\mpNavbar.js" />
+    <Content Include="app\Navigation\Directives\navbar\mpNavbar.tpl.html" />
+    <Content Include="app\Navigation\Directives\sidebar\mpMenuitem.js" />
+    <Content Include="app\Navigation\Directives\sidebar\mpSidebar.js" />
+    <Content Include="app\Navigation\Directives\sidebar\mpSidebar.tpl.html" />
+    <Content Include="app\Navigation\Directives\tree\tree.js" />
+    <Content Include="app\Navigation\home.module.js" />
+    <Content Include="app\Navigation\Services\home.services.js" />
+    <Content Include="app\Navigation\Views\defaultLayout.tpl.html" />
+    <Content Include="app\Navigation\Views\error.tpl.html" />
+    <Content Include="app\Navigation\Views\footer.tpl.html" />
+    <Content Include="app\Navigation\Views\header.tpl.html" />
+    <Content Include="app\Navigation\Views\home.tpl.html" />
+    <Content Include="app\Navigation\Views\leftNav.tpl.html" />
+    <Content Include="app\Patients\Controllers\patientDetail.controller.js" />
+    <Content Include="app\Patients\Controllers\patients.controller.js" />
+    <Content Include="app\Patients\patients.module.js" />
+    <Content Include="app\Patients\Views\patientDetail.tpl.html" />
+    <Content Include="app\Patients\Views\patientDetailTab1.tpl.html" />
+    <Content Include="app\Patients\Views\patientDetailTab2.tpl.html" />
+    <Content Include="app\Patients\Views\patientDetailTab3.tpl.html" />
+    <Content Include="app\Patients\Views\patients.css" />
+    <Content Include="app\Patients\Views\patients.tpl.html" />
+    <Content Include="app\Components\DataGrid\Directives\mpDataGrid.directive.js" />
+    <Content Include="app\Components\DataGrid\Directives\mpDataGrid.tpl.html" />
+    <Content Include="app\Components\DataGrid\mpDataGrid.module.js" />
+    <Content Include="app\Components\LocalStorage\localStorage.module.js" />
+    <Content Include="app\Components\LocalStorage\localStorage.service.js" />
+    <Content Include="app\Components\LoginService\loginService.js" />
+    <Content Include="app\Components\LoginService\loginService.module.js" />
+    <Content Include="app\Components\NavService\mpNavService.module.js" />
+    <Content Include="app\Components\NavService\mpNavService.service.js" />
+    <Content Include="App_Data\aspnet-LocalAccountsApp-20141010103649.mdf" />
+    <Content Include="App_Data\aspnet-LocalAccountsApp-20141010103649_log.ldf">
+      <DependentUpon>aspnet-LocalAccountsApp-20141010103649.mdf</DependentUpon>
+    </Content>
+    <Content Include="assets\images\logo-large.png" />
+    <Content Include="assets\images\logo-small.png" />
+    <Content Include="assets\images\MatchPoint-Person-50x50.png" />
+    <Content Include="assets\styles\MatchPoint.client.css" />
+    <Content Include="Global.asax" />
+    <Content Include="gruntfile.js" />
+    <Content Include="app.tests\npm-debug.log" />
+    <Content Include="app.tests\package.json" />
+    <Content Include="assets\styles\main.less" />
+    <Content Include="app\app.less" />
+    <Content Include="app\Patients\Views\patients.less" />
+    <Content Include="app\Admin\Views\UserAdmin\OURepRoles\OURepRoles.less" />
+    <Content Include="app\Authentication\Views\Login.less" />
+    <Content Include="app\Navigation\Directives\navbar\mpNavbar.less" />
+    <Content Include="app\Navigation\Views\layout.less" />
+    <Content Include="app\Navigation\Directives\sidebar\mpSidebar.less" />
+    <Content Include="app\Navigation\Views\home.less" />
+    <Content Include="app\Components\DataGrid\Directives\mpDataGrid.less" />
+    <Content Include="app\Components\DateControl\Directives\mpDateControl.less" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Views\Home\Index.cshtml" />
+    <Content Include="Index.html" />
+    <Content Include="Scripts\angucomplete-alt\angucomplete-alt.css" />
+    <Content Include="Scripts\angucomplete-alt\angucomplete-alt.js" />
+    <Content Include="Scripts\angucomplete-alt\angucomplete-alt.min.js" />
+    <Content Include="Scripts\Angular-custom-select\customSelect.css" />
+    <Content Include="Scripts\Angular-custom-select\customSelect.js" />
+    <Content Include="Scripts\Angular-materials-icons\angular-material-icons.css" />
+    <Content Include="Scripts\Angular-materials-icons\angular-material-icons.js" />
+    <Content Include="Scripts\Angular-materials-icons\angular-material-icons.min.js" />
+    <Content Include="Scripts\Angular-status-messages\angular-status-messages.min.css" />
+    <Content Include="Scripts\Angular-status-messages\angular-status-messages.min.js" />
+    <Content Include="Scripts\Angular-ui-bootstrap\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\Angular-ui-grid\ui-grid.css" />
+    <Content Include="Scripts\Angular-ui-grid\ui-grid.js" />
+    <Content Include="Scripts\Angular-ui-grid\ui-grid.min.css" />
+    <Content Include="Scripts\Angular-ui-grid\ui-grid.min.js" />
+    <Content Include="Scripts\Angular-ui-grid\ui-grid.svg" />
+    <Content Include="Scripts\Angular-ui-router\angular-ui-router.js" />
+    <Content Include="Scripts\Angular-ui-router\angular-ui-router.min.js" />
+    <Content Include="Scripts\Angular-ui\angular-ui-ieshiv.js" />
+    <Content Include="Scripts\Angular-ui\angular-ui-ieshiv.min.js" />
+    <Content Include="Scripts\Angular-ui\angular-ui.css" />
+    <Content Include="Scripts\Angular-ui\angular-ui.js" />
+    <Content Include="Scripts\Angular-ui\angular-ui.min.css" />
+    <Content Include="Scripts\Angular-ui\angular-ui.min.js" />
+    <Content Include="Scripts\Angular-validation-messages\angular-validation-messages.css" />
+    <Content Include="Scripts\Angular-validation-messages\angular-validation-messages.js" />
+    <Content Include="Scripts\Angular-validation-messages\angular-validation-messages.min.js" />
+    <Content Include="Scripts\Angular\angular-animate.js" />
+    <Content Include="Scripts\Angular\angular-animate.min.js" />
+    <Content Include="Scripts\Angular\angular-aria.js" />
+    <Content Include="Scripts\Angular\angular-aria.min.js" />
+    <Content Include="Scripts\Angular\angular-cookies.js" />
+    <Content Include="Scripts\Angular\angular-cookies.min.js" />
+    <Content Include="Scripts\Angular\angular-loader.js" />
+    <Content Include="Scripts\Angular\angular-loader.min.js" />
+    <Content Include="Scripts\Angular\angular-message-format.js" />
+    <Content Include="Scripts\Angular\angular-message-format.min.js" />
+    <Content Include="Scripts\Angular\angular-messages.js" />
+    <Content Include="Scripts\Angular\angular-messages.min.js" />
+    <Content Include="Scripts\Angular\angular-mocks.js" />
+    <Content Include="Scripts\Angular\angular-parse-ext.js" />
+    <Content Include="Scripts\Angular\angular-parse-ext.min.js" />
+    <Content Include="Scripts\Angular\angular-resource.js" />
+    <Content Include="Scripts\Angular\angular-resource.min.js" />
+    <Content Include="Scripts\Angular\angular-route.js" />
+    <Content Include="Scripts\Angular\angular-route.min.js" />
+    <Content Include="Scripts\Angular\angular-sanitize.js" />
+    <Content Include="Scripts\Angular\angular-sanitize.min.js" />
+    <Content Include="Scripts\Angular\angular-scenario.js" />
+    <Content Include="Scripts\Angular\angular-touch.js" />
+    <Content Include="Scripts\Angular\angular-touch.min.js" />
+    <Content Include="Scripts\Angular\angular.js" />
+    <Content Include="Scripts\Angular\angular.min.js" />
+    <Content Include="Scripts\Angular\SampleText.txt" />
+    <Content Include="Scripts\Angular\version.txt" />
+    <Content Include="Scripts\bootstrap-notify\bootstrap-notify.js" />
+    <Content Include="Scripts\bootstrap-notify\bootstrap-notify.min.js" />
+    <Content Include="Scripts\Bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Scripts\Bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\Bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\Bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\Bootstrap\js\npm.js" />
+    <Content Include="Scripts\CSS\mp_styles.css" />
+    <Content Include="Scripts\jquery\jquery.js" />
+    <Content Include="Scripts\jquery\jquery.min.js" />
+    <Content Include="Scripts\lodash\lodash.js" />
+    <Content Include="Scripts\MatchPoint.client_apps.js" />
+    <Content Include="Scripts\MatchPoint.client_components.js" />
+    <Content Include="Scripts\pdfmake\pdfmake.js" />
+    <Content Include="Scripts\pdfmake\pdfmake.min.js" />
+    <Content Include="Scripts\pdfmake\vfs_fonts.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppUsersController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrganisationUnitController.cs" />
+    <Compile Include="Controllers\OrgUnitRepRoleController.cs" />
+    <Compile Include="Controllers\RefEntitiesController.cs" />
+    <Compile Include="Controllers\UserAccountController.cs" />
+    <Compile Include="Filters\NotImplExceptionFilterAttribute.cs" />
+    <Compile Include="Filters\RequireHttpsAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703152353459_Initial.cs" />
+    <Compile Include="Migrations\201703152353459_Initial.Designer.cs">
+      <DependentUpon>201703152353459_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IOrganisationUnitRepository.cs" />
+    <Compile Include="Models\MatchPointWebContext.cs" />
+    <Compile Include="Models\OrganisationUnit.cs" />
+    <Compile Include="Models\ErrorResult.cs" />
+    <Compile Include="Models\OrganisationUnitRepository.cs" />
+    <Compile Include="Models\PagedListResult.cs" />
+    <Compile Include="Models\BasicAuthHttpModule.cs" />
+    <Compile Include="Models\UnhandledExceptionLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Results\MPActionResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\Bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\Bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\Bootstrap\css\bootstrap.css.map" />
+    <Content Include="Scripts\Bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\Bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\MatchPoint.client_apps.js.map" />
+    <Content Include="Scripts\MatchPoint.client_components.js.map" />
+    <Content Include="package.json" />
+    <Content Include="Scripts\jquery\jquery.min.map" />
+    <Content Include="Scripts\Angular-ui-grid\less\animation.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\body.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\bootstrap\bootstrap.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\cell.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\cellnav\less\cellNav.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\edit\less\edit.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\elements.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\empty-base-layer\less\emptyBaseLayer.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\expandable\less\expandable.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\exporter\less\exporter.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\footer.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\goups.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\grid.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\grouping\less\grouping.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\header.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\icons.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\importer\less\importer.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\main.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\menu.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\move-columns\less\colMovable.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\pagination\less\pagination.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\pinning\less\pinning.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\resize-columns\less\column-resizer.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\row-edit\less\rowEdit.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\rtl.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\selection\less\selection.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\sorting.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\tree-base\less\tree-base.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\tree-view\less\tree-view.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\validate\less\validate.less" />
+    <Content Include="Scripts\Angular-ui-grid\less\variables.less" />
+    <Content Include="Scripts\Angular-ui-grid\ui-grid.eot" />
+    <Content Include="Scripts\Angular-ui-grid\ui-grid.ttf" />
+    <Content Include="Scripts\Angular-ui-grid\ui-grid.woff" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\Admin\Directives\" />
+    <Folder Include="app\Components\NavService\Directives\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703152353459_Initial.resx">
+      <DependentUpon>201703152353459_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4190</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4190/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

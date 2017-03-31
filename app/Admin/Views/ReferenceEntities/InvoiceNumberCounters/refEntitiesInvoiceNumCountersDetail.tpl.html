@@ -1,0 +1,99 @@
+﻿<div ng-controller="refEntitiesInvoiceNumCounterDetailController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-7">
+                <div class="btn-group pull-right">
+                    <!--<ng-md-icon data-toggle="modal" data-target="#modalDeActivate" title="Deactivate" style="fill:#a3cbce;cursor:pointer" icon="healing"></ng-md-icon>-->
+                    <ng-md-icon ng-click="EditItem()" title="Edit Item" style="fill:#a3cbce;cursor:pointer" icon="create"></ng-md-icon>
+                    <ng-md-icon ng-click="Close()" title="Close" style="fill:#a3cbce;cursor:pointer" icon="cancel"></ng-md-icon>
+                    <!--<button type="button" class="btn btn-primary" ng-click="EditItem()">Edit</button>
+                    <button type="button" class="btn btn-primary" ng-click="Close()">Close</button>-->
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Donor Invoice Prefix</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.DonorInvoicePrefix}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Donor Invoice Counter</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.DonorInvoiceCounter}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Donor Credit Prefix</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.DonorCreditPrefix}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Donor Credit Counter</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.DonorCreditCounter}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Cord Invoice Prefix</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.CordInvoicePrefix}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Cord Invoice Counter</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.CordInvoiceCounter}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Cord Credit Prefix</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.CordCreditPrefix}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">Cord Credit Counter</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.CordCreditCounter}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">NCBCN Invoice Prefix</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.NCBCNInvoicePrefix}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">NCBCN Invoice Counter</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.NCBCNInvoiceCounter}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">NCBCN Credit Prefix</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.NCBCNCreditPrefix}}</div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-4">NCBCN Credit Counter</div>
+                    <div class="col-md-8">{{InvoiceNumCounterDetail.NCBCNCreditCounter}}</div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+
+</div>

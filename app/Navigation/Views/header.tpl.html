@@ -1,0 +1,30 @@
+﻿<div class="layout-top" ng-controller="appHeader" ng-show="model.showHeader">
+    <div>
+        <nav class="navbar navbar-default">
+            <div class="col-md-10">             
+             <div class="span12 text-center">
+                 <div class="col-md-2">
+                     <img src="../../../assets/images/logo-small.png" class="img-rounded" alt="MatchPoint" />
+                 </div>
+                 <div class="col-md-10">
+                     <br />
+                     <strong class="spanColor">Australian Bone Marrow Donor Registry</strong>                         
+                     <br />
+                 </div>                
+             </div>
+            </div>
+            <div class="col-md-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="mpNavbarAnchor"><img src="../../../assets/images/MatchPoint-Person-50x50.png" width="20" height="20" title="{{model.userName}}" /></a>
+                    </li>
+                    <li>
+                        <a style="cursor:pointer" class="text-right" ng-click="logout()">Logout</a>
+                    </li>
+                    <li><span>&nbsp;&nbsp;</span></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <mp-navbar></mp-navbar>
+</div>

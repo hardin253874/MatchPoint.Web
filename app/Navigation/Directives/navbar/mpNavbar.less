@@ -1,0 +1,81 @@
+﻿/* NavBar - Start */
+.navbar-default .navbar-nav > li > a:hover {
+    color: black; /*Sets the text hover color on navbar*/
+    background-color: #a3cbce;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+    color: black; /*Sets the text hover color on navbar*/
+    background-color: #a3cbce;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    color: black;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+    color: black;
+    background-color: #a3cbce;
+}
+
+.navbar-default .navbar-nav > .active > a:focus {
+    color: black;
+    background-color: #a3cbce;
+}
+
+.navbar-default .navbar-nav > .open > a {
+    color: black;
+    background-color: #a3cbce;
+}
+
+.navbar-default .navbar-nav > .open > a:hover {
+    color: black;
+    background-color: #a3cbce;
+}
+
+.navbar-default {
+    background-color: transparent; /* #0f006f; */
+    border-color: transparent; /* #030033; */
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #a3cbce; /* #66CCFF; */ /*change color of links in drop down here*/
+    border: 1px solid black;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+    background-color: #a3cbce; /*Change rollover cell color here*/
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: black; /*Change active text color here*/
+}
+
+
+@media (max-width: 767px) {
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus {
+        color: #262626;
+        text-decoration: none;
+        background-color: #a3cbce; /* #66CCFF; */ /*change color of links in drop down here*/
+        border: 1px solid black;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #262626 !important;
+        background-color: #a3cbce !important;
+    }
+
+    .mpNavbarAnchor {
+        text-align: right;
+    }
+}
+
+/* NavBar - End */

@@ -1,0 +1,99 @@
+﻿<div ng-controller="refEntitiesCreateLanguageController">
+   
+    <div class="BorderBoxTitle">
+        <strong>{{title}}</strong>
+    </div>
+    <div class="BorderBox">        
+        <br />
+        <br />
+        <form vmsg-form name="refLanguageCreateForm" ng-submit="CreateLanguage()">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-group">
+                            <div class="col-md-4">Broad Group Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="LanguageDetail.BroadGroupCode" name="BroadGroupCode" class="form-control" vmsg="{showTrigger: 'keydown'}" autofocus required />
+                                <div ng-messages="refLanguageCreateForm.BroadGroupCode.$error" ng-show="refLanguageCreateForm.BroadGroupCode.$dirty && refLanguageCreateForm.BroadGroupCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refLanguageCreateForm.BroadGroupCode.$error.required">
+                                        <msg>Please enter a broad group code.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Broad Group Name</div>
+                            <div class="col-md-8">
+                                <input ng-model="LanguageDetail.BroadGroupName" name="BroadGroupName" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refLanguageCreateForm.BroadGroupName.$error" ng-show="refLanguageCreateForm.BroadGroupName.$dirty && refLanguageCreateForm.BroadGroupName.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refLanguageCreateForm.BroadGroupName.$error.required">
+                                        <msg>Please enter a broad group name.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Narrow Group Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="LanguageDetail.NarrowGroupCode" name="NarrowGroupCode" type="text" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refLanguageCreateForm.NarrowGroupCode.$error" ng-show="refLanguageCreateForm.NarrowGroupCode.$dirty && refLanguageCreateForm.NarrowGroupCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refLanguageCreateForm.NarrowGroupCode.$error.required">
+                                        <msg>Please enter a narrow group code.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Narrow Group Name</div>
+                            <div class="col-md-8">
+                                <input ng-model="LanguageDetail.NarrowGroupName" name="NarrowGroupName" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refLanguageCreateForm.NarrowGroupName.$error" ng-show="refLanguageCreateForm.NarrowGroupName.$dirty && refLanguageCreateForm.NarrowGroupName.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refLanguageCreateForm.NarrowGroupName.$error.required">
+                                        <msg>Please enter a narrow group name.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Language Code</div>
+                            <div class="col-md-8">
+                                <input ng-model="LanguageDetail.LanguageCode" name="LanguageCode" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refLanguageCreateForm.LanguageCode.$error" ng-show="refLanguageCreateForm.LanguageCode.$dirty && refLanguageCreateForm.LanguageCode.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refLanguageCreateForm.LanguageCode.$error.required">
+                                        <msg>Please enter a language code.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-4">Language Description</div>
+                            <div class="col-md-8">
+                                <input ng-model="LanguageDetail.LanguageDescription" name="LanguageDescription" class="form-control" vmsg="{showTrigger: 'keydown'}" required />
+                                <div ng-messages="refLanguageCreateForm.LanguageDescription.$error" ng-show="refLanguageCreateForm.LanguageDescription.$dirty && refLanguageCreateForm.LanguageDescription.$error">
+                                    <span ng-message="required" class="ng-scope validation-message" ng-show="refLanguageCreateForm.LanguageDescription.$error.required">
+                                        <msg>Please enter a language description.</msg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-6"><button type="submit" class="btn btn-primary pull-right" value="Create" ng-disabled="refLanguageCreateForm.$invalid">Create</button></div>
+                            <div class="col-md-6"><button type="button" class="btn btn-primary pull-left" ng-click="Cancel()">Cancel</button></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+</div>

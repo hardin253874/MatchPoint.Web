@@ -1,0 +1,30 @@
+﻿<div class="organisationUnits" ng-controller="ouDetailsController">
+   
+    <div class="BorderBox">
+
+
+        <div class="container">
+
+            <uib-tabset>
+                <uib-tab ng-repeat="tab in model.tabs" heading="{{ tab.heading }}" select="select(tab)">
+
+                </uib-tab>
+            </uib-tabset>
+            <ng-include src="model.tabContentUrl">
+
+            </ng-include>
+
+
+            <!--<div ng-switch on="mode">
+                <div ng-switch-when="detail">
+                    <ng-include src="'../app/Governance/Views/OrganisationUnit/ouDetails.tpl.html'"></ng-include>
+                    </div>
+                <div ng-switch-when="edit">
+                    <ng-include src="'../app/Governance/Views/OrganisationUnit/ouDetailsEdit.tpl.html'"></ng-include>
+                </div>
+
+            </div>-->
+
+        </div>
+    </div>
+</div>
