@@ -65,7 +65,8 @@
                 }).then(function successCallback(response) {
                     return response;
                 }, function errorCallback(error) {  
-                    errorHandle(error);
+                    //errorHandle(error);
+                    mpNotification.notify('The user name or password is incorrect.', 'danger');                    
                 });
             } catch (e) {
 
@@ -77,7 +78,7 @@
                 return $http({
                     method: 'POST',
                     data: data,
-                    url: '/api/Account/Register',
+                    url: '/api/Account/RegisterV2',
                     headers: { 'Content-Type': 'application/json; charset=utf-8' }
                 }).then(function successCallback(response) {
                     return response;

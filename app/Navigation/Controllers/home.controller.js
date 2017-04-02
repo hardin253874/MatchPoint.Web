@@ -9,7 +9,9 @@
         //    $scope.secureData = response.secureData;
         //});
 
-        
+        if (homeService) {
+
+        }
 
     }
 }());

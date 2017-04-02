@@ -72,14 +72,26 @@ namespace MatchPoint.Web.Models
 
     
     public class UserStoreService
-         : IUserStore<AppUser>, IUserPasswordStore<AppUser>
+         : IUserStore<AppUser>, IUserPasswordStore<AppUser>, IUserEmailStore<AppUser>
     {
 
-        MatchPointWebContext context = new MatchPointWebContext();
+        MatchPointWebContext context = new MatchPointWebContext();       
 
         public Task CreateAsync(AppUser user)
         {
-            throw new NotImplementedException();
+            // return Task.FromResult(user);
+            //context.AppUsers.Add(user);
+
+            using (var db = new MatchPointWebContext())
+            {
+                db.AppUsers.Add(user);
+                db.SaveChanges();                
+            }
+
+
+           // return Task.Run(() => context.AppUsers.Add(user));
+
+            return Task.FromResult<object>(null);
         }
 
         public Task DeleteAsync(AppUser user)
@@ -138,11 +150,53 @@ namespace MatchPoint.Web.Models
 
         public Task SetPasswordHashAsync(AppUser user, string passwordHash)
         {
+            user.AppPassword = passwordHash;
+            return Task.FromResult(0);
+
+            //throw new NotImplementedException();
+        }
+
+        public Task<string> GetEmailAsync(AppUser user)
+        {
+            if (user == null)
+            {
+                throw new ArgumentNullException("user");
+            }
+
+            return Task.FromResult(user.AppUserName);
+        }
+
+        public Task<bool> GetEmailConfirmedAsync(AppUser user)
+        {
             throw new NotImplementedException();
         }
 
+        public Task SetEmailConfirmedAsync(AppUser user, bool checkedValue)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SetEmailAsync(AppUser user, string email)
+        {
+            return Task.FromResult(0);
+        }
+
+        public Task<AppUser> FindByEmailAsync(string email)
+        {
+            Task<AppUser> task = context.AppUsers.Where(
+                                  apu => apu.AppUserName == email)
+                                  .FirstOrDefaultAsync();
+
+            return task;
+            //throw new NotImplementedException();
+        }
+
+
     }
 
+    internal class UserRepository<T>
+    {
+    }
 
     internal class IgnoreAttribute : Attribute
     {

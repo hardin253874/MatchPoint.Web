@@ -18,6 +18,7 @@
             .when("/", { templateUrl: "/app/Navigation/Views/defaultLayout.tpl.html" })
             .when("/login", { templateUrl: "/app/Authentication/Views/login.tpl.html" })
             .when("/home", { templateUrl: "/app/Navigation/Views/home.tpl.html" })
+            .when("/error", { templateUrl: "/app/Navigation/Views/error.tpl.html" })
             // Section index pages
             .when("/patients", { templateUrl: "/app/Patients/Views/patients.tpl.html" })
             .when("/donors", { templateUrl: "/app/Donors/Views/donors.tpl.html" })

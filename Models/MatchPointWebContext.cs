@@ -15,7 +15,7 @@ namespace MatchPoint.Web.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public MatchPointWebContext() : base("DefaultConnection")
+        public MatchPointWebContext() : base("MatchPointConnection")
         {
         }
 
@@ -24,6 +24,6 @@ namespace MatchPoint.Web.Models
             return new MatchPointWebContext();
         }
 
-        public System.Data.Entity.DbSet<MatchPoint.Web.Models.AppUser> AppUsers { get; set; }
+        public System.Data.Entity.DbSet<MatchPoint.Web.Models.AppUser> AppUsers { get; set; }       
     }
 }

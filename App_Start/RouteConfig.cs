@@ -88,7 +88,16 @@ namespace MatchPoint.Web
        );
 
 
-
+            routes.MapRoute(
+                        name: "error",
+                        url: "error/{*.}",
+                        defaults: new
+                        {
+                            controller = "Home",
+                            action = "Index",
+                            id = UrlParameter.Optional
+                        }
+                    );
 
 
             routes.MapRoute(

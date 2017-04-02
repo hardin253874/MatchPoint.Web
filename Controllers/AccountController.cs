@@ -25,7 +25,7 @@ namespace MatchPoint.Web.Controllers
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
-
+        private CustomUserManager _cusUserManager;
         public AccountController()
         {
 
@@ -48,6 +48,17 @@ namespace MatchPoint.Web.Controllers
             private set
             {
                 _userManager = value;
+            }
+        }
+
+        public CustomUserManager CusUserManager
+        {
+            get
+            {
+                return _cusUserManager ?? Request.GetOwinContext().GetUserManager<CustomUserManager>();
+            }private set
+            {
+                _cusUserManager = value;
             }
         }
 
@@ -340,6 +351,37 @@ namespace MatchPoint.Web.Controllers
             }
 
             return Ok();
+        }
+
+
+        [AllowAnonymous]
+        [Route("RegisterV2")]
+        public async Task<IHttpActionResult> RegisterV2(RegisterBindingModel model)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var user = new AppUser() { UserName = model.Email };
+
+                IdentityResult result = await CusUserManager.CreateAsync(user, model.Password);
+
+                if (!result.Succeeded)
+                {
+                    return GetErrorResult(result);
+                }
+
+                return Ok();
+
+            }
+            catch(Exception ex)
+            {
+                return new System.Web.Http.Results.ExceptionResult(ex, this);
+            }
+           
         }
 
         // POST api/Account/RegisterExternal

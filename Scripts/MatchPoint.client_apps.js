@@ -1,5 +1,5 @@
 /**
- * MatchPoint.client - v3.0.1 - 2017-03-29
+ * MatchPoint.client - v3.0.1 - 2017-04-03
  * http://www.artisgroup.com.au/
  *
  * Copyright 2011-2017 Artis Group
@@ -5129,14 +5129,14 @@
 (function () {
     "use strict";
 
-    angular.module('mp.app.admin').controller('userAccountController', ['UserAccountService', '$scope', '$filter', '$stateParams', 'uiGridConstants', 'mpDataGridUtils', userAccountController]);
+    angular.module('mp.app.admin').controller('userAccountController', ['UserAccountService', '$scope', '$filter', '$stateParams', 'uiGridConstants', 'mpDataGridUtils', 'mpNavService', userAccountController]);
 
-    function userAccountController(UserAccountService, $scope, $filter, $stateParams, uiGridConstants, mpDataGridUtils) {
+    function userAccountController(UserAccountService, $scope, $filter, $stateParams, uiGridConstants, mpDataGridUtils, mpNavService) {
         
         $scope.title = "User Accounts";         
         $scope.gridParams = $stateParams.gridParams;
         
-
+        mpNavService.checkAuthentication();
         var callBackFunc = mpDataGridUtils.buildCallbackFunc(load);        
 
         $scope.gridColumnDefs = [{ name: 'Id', field: 'Id', displayName: 'Serial No', width: '10%',headerCellClass: 'gridHeader', filters: [{ condition: uiGridConstants.filter.CONTAINS, placeholder: 'Contains' }, { condition: uiGridConstants.filter.GREATER_THAN_OR_EQUAL, placeholder: 'Greater than or equal' }] },
@@ -6463,18 +6463,8 @@
         };
 
         $scope.login = function () {
-
-            $scope.dataLoading = true;
-
             if (mpLocalStorage) {
-                AuthenticationService.LoginMVCWebApi($scope.model.username, $scope.model.password).then(function (response) {
-                    if (response) {
-                        AuthenticationService.SetBearerCredentials(response);
-                        $location.path('/');
-                    }
-
-                    $scope.dataLoading = false;
-                });
+                login();
             }                
         };
 
@@ -6484,17 +6474,31 @@
             if (mpLocalStorage) {
                 AuthenticationService.registerMVCWebApi($scope.model.username, $scope.model.password).then(function (response) {
                     if (response !== null) {
-                        $scope.model.username = '';
-                        $scope.model.password = '';
+                        //$scope.model.username = '';
+                        //$scope.model.password = '';
                         $scope.model.loginMode = true;
                         $scope.dataLoading = false;
-                        mpNotification.notify('register successful');                       
+                        mpNotification.notify('register successful');  
+						
+						login();
                     }
 
                     $scope.dataLoading = false;
                 });
             }
         };
+
+        function login(){
+			$scope.dataLoading = true;
+			AuthenticationService.LoginMVCWebApi($scope.model.username, $scope.model.password).then(function (response) {
+                    if (response) {
+                        AuthenticationService.SetBearerCredentials(response);
+                        $location.path('/');
+                    }
+
+                    $scope.dataLoading = false;
+                });
+		}
    });
 }());
 (function () {
@@ -6927,7 +6931,9 @@
         //    $scope.secureData = response.secureData;
         //});
 
-        
+        if (homeService) {
+
+        }
 
     }
 }());
@@ -7348,6 +7354,7 @@
             .when("/", { templateUrl: "/app/Navigation/Views/defaultLayout.tpl.html" })
             .when("/login", { templateUrl: "/app/Authentication/Views/login.tpl.html" })
             .when("/home", { templateUrl: "/app/Navigation/Views/home.tpl.html" })
+            .when("/error", { templateUrl: "/app/Navigation/Views/error.tpl.html" })
             // Section index pages
             .when("/patients", { templateUrl: "/app/Patients/Views/patients.tpl.html" })
             .when("/donors", { templateUrl: "/app/Donors/Views/donors.tpl.html" })

@@ -63,6 +63,7 @@
             getCurrentRootItem: getCurrentRootItem,
             reset: reset,
             resetMenuState: resetMenuState,
+            checkAuthentication: checkAuthentication,
             navigateToState: navigateToState,
             navigateToSibling: navigateToSibling,
             navigateToChildState: navigateToChildState,
@@ -366,6 +367,13 @@
                 }
             }
         }
+
+        function checkAuthentication(){
+			var userCredential = getUserAccount();
+            if (!userCredential) {
+                navigateToState('login', null);
+            }
+		}
 
         /**
          * Navigate to a child of the current page. This adds another entry to the end of the breadcrumb.

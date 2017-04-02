@@ -1,14 +1,14 @@
 ﻿(function () {
     "use strict";
 
-    angular.module('mp.app.admin').controller('userAccountController', ['UserAccountService', '$scope', '$filter', '$stateParams', 'uiGridConstants', 'mpDataGridUtils', userAccountController]);
+    angular.module('mp.app.admin').controller('userAccountController', ['UserAccountService', '$scope', '$filter', '$stateParams', 'uiGridConstants', 'mpDataGridUtils', 'mpNavService', userAccountController]);
 
-    function userAccountController(UserAccountService, $scope, $filter, $stateParams, uiGridConstants, mpDataGridUtils) {
+    function userAccountController(UserAccountService, $scope, $filter, $stateParams, uiGridConstants, mpDataGridUtils, mpNavService) {
         
         $scope.title = "User Accounts";         
         $scope.gridParams = $stateParams.gridParams;
         
-
+        mpNavService.checkAuthentication();
         var callBackFunc = mpDataGridUtils.buildCallbackFunc(load);        
 
         $scope.gridColumnDefs = [{ name: 'Id', field: 'Id', displayName: 'Serial No', width: '10%',headerCellClass: 'gridHeader', filters: [{ condition: uiGridConstants.filter.CONTAINS, placeholder: 'Contains' }, { condition: uiGridConstants.filter.GREATER_THAN_OR_EQUAL, placeholder: 'Greater than or equal' }] },

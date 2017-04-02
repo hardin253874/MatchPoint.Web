@@ -52,18 +52,8 @@
         };
 
         $scope.login = function () {
-
-            $scope.dataLoading = true;
-
             if (mpLocalStorage) {
-                AuthenticationService.LoginMVCWebApi($scope.model.username, $scope.model.password).then(function (response) {
-                    if (response) {
-                        AuthenticationService.SetBearerCredentials(response);
-                        $location.path('/');
-                    }
-
-                    $scope.dataLoading = false;
-                });
+                login();
             }                
         };
 
@@ -73,16 +63,30 @@
             if (mpLocalStorage) {
                 AuthenticationService.registerMVCWebApi($scope.model.username, $scope.model.password).then(function (response) {
                     if (response !== null) {
-                        $scope.model.username = '';
-                        $scope.model.password = '';
+                        //$scope.model.username = '';
+                        //$scope.model.password = '';
                         $scope.model.loginMode = true;
                         $scope.dataLoading = false;
-                        mpNotification.notify('register successful');                       
+                        mpNotification.notify('register successful');  
+						
+						login();
                     }
 
                     $scope.dataLoading = false;
                 });
             }
         };
+
+        function login(){
+			$scope.dataLoading = true;
+			AuthenticationService.LoginMVCWebApi($scope.model.username, $scope.model.password).then(function (response) {
+                    if (response) {
+                        AuthenticationService.SetBearerCredentials(response);
+                        $location.path('/');
+                    }
+
+                    $scope.dataLoading = false;
+                });
+		}
    });
 }());

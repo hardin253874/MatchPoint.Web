@@ -416,6 +416,10 @@
     <Content Include="App_Data\aspnet-LocalAccountsApp-20141010103649_log.ldf">
       <DependentUpon>aspnet-LocalAccountsApp-20141010103649.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\matchpointDB.mdf" />
+    <Content Include="App_Data\matchpointDB_log.ldf">
+      <DependentUpon>matchpointDB.mdf</DependentUpon>
+    </Content>
     <Content Include="assets\images\logo-large.png" />
     <Content Include="assets\images\logo-small.png" />
     <Content Include="assets\images\MatchPoint-Person-50x50.png" />

@@ -60,7 +60,10 @@ namespace MatchPoint.Web
         public static CustomUserManager Create(IdentityFactoryOptions<CustomUserManager> options, IOwinContext context)
         {
             UserStoreService userStore = new UserStoreService();
+
             var manager = new CustomUserManager(userStore);
+
+            //var manager = new CustomUserManager(userStore);
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<AppUser>(manager)
             {
@@ -91,7 +94,8 @@ namespace MatchPoint.Web
     {
         public override string HashPassword(string password)
         {
-            return base.HashPassword(password);
+            return password;  //do not hash password for test
+            //return base.HashPassword(password);
         }
 
         public override PasswordVerificationResult VerifyHashedPassword(string hashedPassword, string providedPassword)

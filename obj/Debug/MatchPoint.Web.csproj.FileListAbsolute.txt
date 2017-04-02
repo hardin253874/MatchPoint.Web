@@ -75,4 +75,3 @@ C:\Projects\MatchPoint3\MatchPoint.Web\obj\Debug\MatchPoint.Web.csproj.GenerateR
 C:\Projects\MatchPoint3\MatchPoint.Web\bin\NLog.config
 C:\Projects\MatchPoint3\MatchPoint.Web\bin\NLog.dll
 C:\Projects\MatchPoint3\MatchPoint.Web\bin\NLog.xml
-C:\Projects\MatchPoint3\MatchPoint.Web\obj\Debug\MatchPoint.Web.csprojResolveAssemblyReference.cache

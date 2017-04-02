@@ -1,5 +1,5 @@
 /**
- * MatchPoint.client - v3.0.1 - 2017-03-29
+ * MatchPoint.client - v3.0.1 - 2017-04-03
  * http://www.artisgroup.com.au/
  *
  * Copyright 2011-2017 Artis Group
@@ -783,6 +783,7 @@
             getCurrentRootItem: getCurrentRootItem,
             reset: reset,
             resetMenuState: resetMenuState,
+            checkAuthentication: checkAuthentication,
             navigateToState: navigateToState,
             navigateToSibling: navigateToSibling,
             navigateToChildState: navigateToChildState,
@@ -1086,6 +1087,13 @@
                 }
             }
         }
+
+        function checkAuthentication(){
+			var userCredential = getUserAccount();
+            if (!userCredential) {
+                navigateToState('login', null);
+            }
+		}
 
         /**
          * Navigate to a child of the current page. This adds another entry to the end of the breadcrumb.
@@ -2225,7 +2233,8 @@
                 }).then(function successCallback(response) {
                     return response;
                 }, function errorCallback(error) {  
-                    errorHandle(error);
+                    //errorHandle(error);
+                    mpNotification.notify('The user name or password is incorrect.', 'danger');                    
                 });
             } catch (e) {
 
@@ -2237,7 +2246,7 @@
                 return $http({
                     method: 'POST',
                     data: data,
-                    url: '/api/Account/Register',
+                    url: '/api/Account/RegisterV2',
                     headers: { 'Content-Type': 'application/json; charset=utf-8' }
                 }).then(function successCallback(response) {
                     return response;
